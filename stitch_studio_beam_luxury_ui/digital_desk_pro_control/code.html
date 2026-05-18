@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Space+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+                  "error-container": "#93000a",
+                  "on-secondary-container": "#b0b5c3",
+                  "tertiary-fixed": "#dbe2fa",
+                  "secondary-fixed": "#dde2f1",
+                  "on-primary": "#432c00",
+                  "on-tertiary-container": "#464e61",
+                  "tertiary-fixed-dim": "#bec6dd",
+                  "on-background": "#e2e2e2",
+                  "outline": "#9f8e78",
+                  "secondary-fixed-dim": "#c1c6d5",
+                  "surface-container-high": "#282a2b",
+                  "primary-container": "#ffb000",
+                  "on-secondary": "#2b313c",
+                  "inverse-surface": "#e2e2e2",
+                  "on-tertiary": "#283042",
+                  "secondary-container": "#414753",
+                  "surface-container-low": "#1a1c1c",
+                  "on-error": "#690005",
+                  "on-surface-variant": "#d7c4ac",
+                  "surface-container": "#1e2020",
+                  "surface-bright": "#37393a",
+                  "on-tertiary-fixed-variant": "#3f475a",
+                  "on-error-container": "#ffdad6",
+                  "inverse-primary": "#805600",
+                  "surface-variant": "#333535",
+                  "background": "#121414",
+                  "inverse-on-surface": "#2f3131",
+                  "surface-container-highest": "#333535",
+                  "surface": "#121414",
+                  "outline-variant": "#524533",
+                  "on-secondary-fixed-variant": "#414753",
+                  "primary-fixed": "#ffddaf",
+                  "tertiary-container": "#b7bfd6",
+                  "surface-tint": "#ffba43",
+                  "primary": "#ffd597",
+                  "on-primary-container": "#6a4700",
+                  "surface-dim": "#121414",
+                  "tertiary": "#d3dbf3",
+                  "surface-container-lowest": "#0c0f0f",
+                  "on-secondary-fixed": "#161c26",
+                  "error": "#ffb4ab",
+                  "on-surface": "#e2e2e2",
+                  "secondary": "#c1c6d5",
+                  "on-tertiary-fixed": "#131b2c",
+                  "on-primary-fixed-variant": "#614000",
+                  "primary-fixed-dim": "#ffba43",
+                  "on-primary-fixed": "#281800"
+          },
+          "borderRadius": {
+                  "DEFAULT": "0.125rem",
+                  "lg": "0.25rem",
+                  "xl": "0.5rem",
+                  "full": "0.75rem"
+          },
+          "spacing": {
+                  "container-max": "1440px",
+                  "margin": "64px",
+                  "unit": "8px",
+                  "gutter": "24px"
+          },
+          "fontFamily": {
+                  "headline-md": ["Epilogue"],
+                  "body-md": ["Space Grotesk"],
+                  "body-lg": ["Space Grotesk"],
+                  "headline-lg": ["Epilogue"],
+                  "spec-mono": ["Space Grotesk"],
+                  "label-sm": ["Space Grotesk"],
+                  "headline-xl": ["Epilogue"]
+          },
+          "fontSize": {
+                  "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "500"}],
+                  "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                  "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                  "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                  "spec-mono": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                  "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                  "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .knurled-texture {
+      background-image: radial-gradient(#ffffff20 1px, transparent 0);
+      background-size: 4px 4px;
+    }
+    .fader-track {
+      background: linear-gradient(to top, #121414 0%, #1a1c1c 100%);
+      box-shadow: inset 2px 2px 5px rgba(0,0,0,0.5), inset -1px -1px 2px rgba(255,255,255,0.05);
+    }
+    .bloom-sm { filter: drop-shadow(0 0 8px rgba(255, 186, 67, 0.4)); }
+    .bloom-lg { filter: drop-shadow(0 0 20px rgba(255, 186, 67, 0.25)); }
+    .bevel-edge { box-shadow: inset 1px 1px 0px rgba(255,255,255,0.05), 1px 1px 3px rgba(0,0,0,0.5); }
+  </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen flex selection:bg-primary/30">
+<!-- SideNavBar Anchor -->
+<aside class="fixed left-0 top-0 bottom-0 w-64 flex flex-col z-50 bg-surface-container-low border-r border-outline-variant bg-gradient-to-b from-surface-container-low to-surface shadow-[10px_0_30px_rgba(0,0,0,0.5)]">
+<div class="p-6 flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary rounded flex items-center justify-center shadow-[0_0_15px_rgba(255,186,67,0.3)]">
+<span class="material-symbols-outlined text-on-primary" style="font-variation-settings: 'FILL' 1;">wb_iridescent</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Studio-Beam</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant/60">Pro Control v2.4</p>
+</div>
+</div>
+<button class="mt-6 w-full py-3 bg-primary text-on-primary font-bold rounded-lg bevel-edge hover:bloom-sm transition-all active:scale-95">
+        New Project
+      </button>
+</div>
+<nav class="flex-1 mt-4">
+<a class="flex items-center gap-4 bg-primary/10 text-primary border-r-2 border-primary px-6 py-4 shadow-[0_0_20px_rgba(255,186,67,0.15)] transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-variant hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined">wb_iridescent</span>
+<span class="font-label-sm text-label-sm">Luminaires</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-variant hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-sm text-label-sm">Scenes</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-variant hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-sm text-label-sm">Community</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:bg-surface-variant hover:text-on-surface transition-all" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</a>
+</nav>
+<div class="p-6 border-t border-outline-variant flex flex-col gap-2">
+<a class="flex items-center gap-4 text-on-surface-variant py-2 hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-sm text-label-sm">Documentation</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant py-2 hover:text-on-surface transition-colors" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-sm text-label-sm">Log Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="flex-1 ml-64 flex flex-col min-h-screen">
+<!-- TopNavBar Anchor -->
+<header class="fixed top-0 right-0 left-64 h-16 flex items-center justify-between px-gutter z-40 border-b border-outline-variant bg-surface/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(255,186,67,0.05)]">
+<div class="flex items-center gap-8">
+<div class="flex gap-6">
+<button class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm">CONSOLE</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors font-label-sm text-label-sm">DMX MAP</button>
+<button class="text-on-surface-variant hover:text-on-surface transition-colors font-label-sm text-label-sm">TIMELINE</button>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="bg-surface-container-high px-4 py-1.5 rounded-full border border-outline-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-body-md w-48 text-on-surface placeholder:text-on-surface-variant/40" placeholder="Search fixtures..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded transition-all"><span class="material-symbols-outlined">notifications</span></button>
+<button class="p-2 text-on-surface-variant hover:bg-surface-container-high rounded transition-all"><span class="material-symbols-outlined">settings</span></button>
+<button class="p-2 text-primary hover:bg-surface-container-high rounded transition-all"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span></button>
+</div>
+</div>
+</header>
+<!-- Console Interface -->
+<div class="mt-16 p-gutter flex-1 grid grid-cols-12 gap-gutter bg-background overflow-hidden h-[calc(100vh-64px)]">
+<!-- Center Grid: Light Groups -->
+<section class="col-span-9 flex flex-col gap-gutter">
+<!-- Live Preview / Master Area -->
+<div class="grid grid-cols-4 gap-gutter h-1/3">
+<div class="col-span-3 bg-surface-container rounded-xl border border-outline-variant relative overflow-hidden flex items-center justify-center group bevel-edge">
+<img alt="Stage View" class="absolute inset-0 w-full h-full object-cover opacity-30 grayscale group-hover:opacity-40 transition-opacity" data-alt="A professional high-end cinematic studio lighting setup in a dark warehouse. The scene is illuminated by precision Fresnel lamps and softbox arrays, casting long dramatic shadows and warm amber light beams across a textured concrete floor. The atmosphere is technical and moody, with a palette of deep midnight blues and glowing ochre highlights." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuYIn1QzjLNjdD-fmWZ6_KxQqpqzLkYkBwEcXLEEXbsqWbcYqIzwZuLr7uR_TiLjg9uKtdSf0TqZWAt6x-7XhQISru6cusfpsWmcLSQjVrJZI5qt3mQcjORoI-rjO1KqUkzexWvizDY1Y9prx_NctIxi-L4uqXhHRxHbMkyytRNUImimYF21CEdiMkzO-6odSUpZfua1WqA2ax0OuCul_orlSaWSHYXkGsS3VhXgGxo8dTJgflLmX0f52WKx7poErcmzMfBROq4J8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent"></div>
+<div class="z-10 text-center">
+<span class="font-spec-mono text-label-sm text-primary uppercase tracking-[0.2em] block mb-2">Active Scene</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">NOIR_EDITORIAL_V4</h2>
+</div>
+</div>
+<!-- Master Fader -->
+<div class="col-span-1 bg-surface-container-high rounded-xl border border-outline-variant p-6 flex flex-col items-center bevel-edge">
+<span class="font-spec-mono text-label-sm text-primary mb-6">MASTER</span>
+<div class="flex-1 w-12 fader-track rounded-full relative p-1 group">
+<div class="absolute bottom-0 left-0 right-0 bg-primary/20 rounded-full" style="height: 82%"></div>
+<div class="absolute bottom-[82%] left-1/2 -translate-x-1/2 w-10 h-16 bg-surface-bright border border-primary rounded-lg cursor-pointer flex items-center justify-center bloom-sm shadow-xl transition-transform active:scale-95 z-20">
+<div class="w-6 h-[1px] bg-primary/40 mb-1"></div>
+<div class="w-6 h-[1px] bg-primary/40 mb-1"></div>
+<div class="w-6 h-[1px] bg-primary/40"></div>
+</div>
+</div>
+<span class="mt-6 font-headline-md text-headline-md text-primary">82%</span>
+</div>
+</div>
+<!-- Light Group Grid -->
+<div class="flex-1 grid grid-cols-2 gap-gutter">
+<!-- Group: Main -->
+<div class="bg-surface-container rounded-xl border border-outline-variant p-6 flex flex-col gap-4 bevel-edge">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">flare</span>
+<h3 class="font-headline-md text-headline-md">MAIN</h3>
+</div>
+<span class="font-spec-mono text-label-sm text-on-surface-variant">ID: 001-012</span>
+</div>
+<div class="flex-1 flex gap-8">
+<div class="flex-1 flex flex-col gap-4 justify-center">
+<label class="font-label-sm text-label-sm text-on-surface-variant">TEMPERATURE (5600K)</label>
+<div class="h-2 w-full bg-gradient-to-r from-blue-400 via-white to-amber-400 rounded-full relative">
+<div class="absolute top-1/2 left-2/3 -translate-y-1/2 w-4 h-4 bg-on-surface rounded-full border-2 border-background shadow-lg"></div>
+</div>
+<label class="font-label-sm text-label-sm text-on-surface-variant mt-2">INTENSITY</label>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[75%] bg-primary bloom-sm"></div>
+</div>
+</div>
+<div class="w-32 flex flex-col items-center gap-2">
+<div class="w-24 h-24 rounded-full bg-surface-variant border-4 border-outline-variant flex items-center justify-center knurled-texture shadow-inner group cursor-pointer active:rotate-12 transition-transform">
+<div class="w-1 h-3 bg-primary rounded-full absolute top-2"></div>
+</div>
+<span class="font-spec-mono text-label-sm">PAN/TILT</span>
+</div>
+</div>
+</div>
+<!-- Group: Fill -->
+<div class="bg-surface-container rounded-xl border border-outline-variant p-6 flex flex-col gap-4 bevel-edge">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">blur_on</span>
+<h3 class="font-headline-md text-headline-md">FILL</h3>
+</div>
+<span class="font-spec-mono text-label-sm text-on-surface-variant">ID: 013-024</span>
+</div>
+<div class="flex-1 flex gap-8">
+<div class="flex-1 flex flex-col gap-4 justify-center">
+<label class="font-label-sm text-label-sm text-on-surface-variant">TEMPERATURE (3200K)</label>
+<div class="h-2 w-full bg-gradient-to-r from-blue-400 via-white to-amber-400 rounded-full relative">
+<div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-4 h-4 bg-on-surface rounded-full border-2 border-background shadow-lg"></div>
+</div>
+<label class="font-label-sm text-label-sm text-on-surface-variant mt-2">INTENSITY</label>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[45%] bg-primary bloom-sm"></div>
+</div>
+</div>
+<div class="w-32 flex flex-col items-center gap-2">
+<div class="w-24 h-24 rounded-full bg-surface-variant border-4 border-outline-variant flex items-center justify-center knurled-texture shadow-inner group cursor-pointer">
+<div class="w-1 h-3 bg-primary rounded-full absolute top-2"></div>
+</div>
+<span class="font-spec-mono text-label-sm">SHADOWS</span>
+</div>
+</div>
+</div>
+<!-- Group: Rim -->
+<div class="bg-surface-container rounded-xl border border-outline-variant p-6 flex flex-col gap-4 bevel-edge">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">stream</span>
+<h3 class="font-headline-md text-headline-md">RIM</h3>
+</div>
+<span class="font-spec-mono text-label-sm text-on-surface-variant">ID: 025-032</span>
+</div>
+<div class="flex-1 flex gap-8">
+<div class="flex-1 flex flex-col gap-4 justify-center">
+<label class="font-label-sm text-label-sm text-on-surface-variant">CHROMA (BLUE)</label>
+<div class="h-2 w-full bg-gradient-to-r from-blue-600 via-purple-500 to-red-500 rounded-full relative">
+<div class="absolute top-1/2 left-1/5 -translate-y-1/2 w-4 h-4 bg-on-surface rounded-full border-2 border-background shadow-lg"></div>
+</div>
+<label class="font-label-sm text-label-sm text-on-surface-variant mt-2">INTENSITY</label>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[90%] bg-primary bloom-sm"></div>
+</div>
+</div>
+<div class="w-32 flex flex-col items-center gap-2">
+<div class="w-24 h-24 rounded-full bg-surface-variant border-4 border-outline-variant flex items-center justify-center knurled-texture shadow-inner group cursor-pointer">
+<div class="w-1 h-3 bg-primary rounded-full absolute top-2"></div>
+</div>
+<span class="font-spec-mono text-label-sm">FOCUS</span>
+</div>
+</div>
+</div>
+<!-- Group: Practicals -->
+<div class="bg-surface-container rounded-xl border border-outline-variant p-6 flex flex-col gap-4 bevel-edge">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">tungsten</span>
+<h3 class="font-headline-md text-headline-md">PRACTICALS</h3>
+</div>
+<span class="font-spec-mono text-label-sm text-on-surface-variant">ID: 100-112</span>
+</div>
+<div class="flex-1 flex gap-8">
+<div class="flex-1 flex flex-col gap-4 justify-center">
+<label class="font-label-sm text-label-sm text-on-surface-variant">WARMTH (2700K)</label>
+<div class="h-2 w-full bg-gradient-to-r from-white to-orange-600 rounded-full relative">
+<div class="absolute top-1/2 right-1 -translate-y-1/2 w-4 h-4 bg-on-surface rounded-full border-2 border-background shadow-lg"></div>
+</div>
+<label class="font-label-sm text-label-sm text-on-surface-variant mt-2">INTENSITY</label>
+<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-[12%] bg-primary bloom-sm"></div>
+</div>
+</div>
+<div class="w-32 flex flex-col items-center gap-2">
+<div class="w-24 h-24 rounded-full bg-surface-variant border-4 border-outline-variant flex items-center justify-center knurled-texture shadow-inner group cursor-pointer">
+<div class="w-1 h-3 bg-primary rounded-full absolute top-2"></div>
+</div>
+<span class="font-spec-mono text-label-sm">VARIANCE</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sidebar: Scene Presets -->
+<aside class="col-span-3 flex flex-col gap-gutter">
+<div class="bg-surface-container-high rounded-xl border border-outline-variant p-6 flex flex-col gap-6 flex-1 bevel-edge overflow-y-auto">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-md text-headline-md">SCENE PRESETS</h4>
+<span class="material-symbols-outlined text-primary">add_box</span>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Active Preset -->
+<div class="p-4 bg-primary/10 border-2 border-primary rounded-lg flex items-center justify-between bloom-lg">
+<div class="flex flex-col">
+<span class="font-spec-mono text-label-sm text-primary">ACTIVE</span>
+<span class="font-body-lg text-body-lg font-bold">NOIR_EDITORIAL</span>
+</div>
+<button class="bg-primary text-on-primary p-2 rounded">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Inactive Presets -->
+<div class="p-4 bg-surface rounded-lg border border-outline-variant flex items-center justify-between hover:border-primary transition-all group">
+<div class="flex flex-col">
+<span class="font-spec-mono text-label-sm text-on-surface-variant">ID: 002</span>
+<span class="font-body-lg text-body-lg">GOLDEN_HOUR</span>
+</div>
+<button class="bg-surface-container text-on-surface-variant p-2 rounded group-hover:text-primary">
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+<div class="p-4 bg-surface rounded-lg border border-outline-variant flex items-center justify-between hover:border-primary transition-all group">
+<div class="flex flex-col">
+<span class="font-spec-mono text-label-sm text-on-surface-variant">ID: 003</span>
+<span class="font-body-lg text-body-lg">CYBERPUNK_VOID</span>
+</div>
+<button class="bg-surface-container text-on-surface-variant p-2 rounded group-hover:text-primary">
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+<div class="p-4 bg-surface rounded-lg border border-outline-variant flex items-center justify-between hover:border-primary transition-all group opacity-60">
+<div class="flex flex-col">
+<span class="font-spec-mono text-label-sm text-on-surface-variant">ID: 004</span>
+<span class="font-body-lg text-body-lg">HIGH_KEY_COMMERCIAL</span>
+</div>
+<button class="bg-surface-container text-on-surface-variant p-2 rounded group-hover:text-primary">
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+<div class="p-4 bg-surface rounded-lg border border-outline-variant flex items-center justify-between hover:border-primary transition-all group opacity-60">
+<div class="flex flex-col">
+<span class="font-spec-mono text-label-sm text-on-surface-variant">ID: 005</span>
+<span class="font-body-lg text-body-lg">DRAMATIC_REMBRANDT</span>
+</div>
+<button class="bg-surface-container text-on-surface-variant p-2 rounded group-hover:text-primary">
+<span class="material-symbols-outlined">play_arrow</span>
+</button>
+</div>
+</div>
+<div class="mt-auto border-t border-outline-variant pt-6">
+<div class="flex justify-between items-center mb-4">
+<span class="font-spec-mono text-label-sm">FADE TIME</span>
+<span class="font-headline-md text-headline-md text-primary">2.4s</span>
+</div>
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full w-1/3 bg-primary"></div>
+</div>
+</div>
+</div>
+<!-- System Status Mini Card -->
+<div class="bg-surface-container rounded-xl border border-outline-variant p-4 flex items-center gap-4 bevel-edge">
+<div class="relative">
+<div class="w-3 h-3 bg-green-500 rounded-full"></div>
+<div class="absolute inset-0 w-3 h-3 bg-green-500 rounded-full animate-ping"></div>
+</div>
+<div class="flex-1">
+<p class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Bridge Online</p>
+<p class="font-spec-mono text-label-sm text-primary">Latency: 12ms</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">wifi</span>
+</div>
+</aside>
+</div>
+</main>
+</body></html>

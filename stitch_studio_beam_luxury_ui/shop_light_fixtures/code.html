@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#1e2020",
+                    "surface-dim": "#121414",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#bec6dd",
+                    "surface-tint": "#ffba43",
+                    "primary-fixed-dim": "#ffba43",
+                    "on-secondary-fixed": "#161c26",
+                    "on-error": "#690005",
+                    "tertiary-fixed": "#dbe2fa",
+                    "secondary": "#c1c6d5",
+                    "surface-bright": "#37393a",
+                    "secondary-fixed-dim": "#c1c6d5",
+                    "on-surface-variant": "#d7c4ac",
+                    "surface-container-highest": "#333535",
+                    "on-primary-fixed": "#281800",
+                    "on-tertiary-container": "#464e61",
+                    "surface-container-high": "#282a2b",
+                    "tertiary": "#d3dbf3",
+                    "on-background": "#e2e2e2",
+                    "on-tertiary-fixed": "#131b2c",
+                    "on-secondary-container": "#b0b5c3",
+                    "on-primary-fixed-variant": "#614000",
+                    "on-tertiary": "#283042",
+                    "on-primary": "#432c00",
+                    "surface-container-low": "#1a1c1c",
+                    "on-surface": "#e2e2e2",
+                    "inverse-primary": "#805600",
+                    "primary-container": "#ffb000",
+                    "primary-fixed": "#ffddaf",
+                    "secondary-fixed": "#dde2f1",
+                    "inverse-surface": "#e2e2e2",
+                    "on-error-container": "#ffdad6",
+                    "outline": "#9f8e78",
+                    "outline-variant": "#524533",
+                    "on-secondary": "#2b313c",
+                    "primary": "#ffd597",
+                    "on-secondary-fixed-variant": "#414753",
+                    "on-tertiary-fixed-variant": "#3f475a",
+                    "surface-variant": "#333535",
+                    "inverse-on-surface": "#2f3131",
+                    "tertiary-container": "#b7bfd6",
+                    "background": "#121414",
+                    "error": "#ffb4ab",
+                    "surface": "#121414",
+                    "secondary-container": "#414753",
+                    "on-primary-container": "#6a4700",
+                    "surface-container-lowest": "#0c0f0f"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "unit": "8px",
+                    "gutter": "24px",
+                    "margin": "64px",
+                    "container-max": "1440px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Epilogue"],
+                    "headline-lg": ["Epilogue"],
+                    "spec-mono": ["Space Grotesk"],
+                    "body-md": ["Space Grotesk"],
+                    "body-lg": ["Space Grotesk"],
+                    "headline-md": ["Epilogue"],
+                    "label-sm": ["Space Grotesk"]
+            },
+            "fontSize": {
+                    "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "spec-mono": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .knurled-texture {
+            background-image: radial-gradient(#ffffff10 1px, transparent 0);
+            background-size: 4px 4px;
+        }
+        .light-throw-gradient {
+            background: radial-gradient(circle at 0% 0%, rgba(255, 186, 67, 0.15) 0%, transparent 70%);
+        }
+        .hardware-border {
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background min-h-screen selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="bg-surface-dim dark:bg-surface-dim border-b border-outline-variant/30 docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-gutter py-unit w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary dark:text-primary" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<h1 class="text-headline-md font-headline-md font-bold tracking-tighter text-primary dark:text-primary">Studio-Beam</h1>
+</div>
+<div class="flex items-center gap-2 text-spec-mono font-spec-mono text-on-surface-variant">
+<span>100%</span>
+<span class="material-symbols-outlined" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+</header>
+<main class="pb-32">
+<!-- Technical Header Section -->
+<section class="px-gutter pt-8 pb-4">
+<div class="flex flex-col gap-1">
+<span class="text-spec-mono font-spec-mono text-primary uppercase tracking-[0.2em]">Inventory / 2024</span>
+<h2 class="text-headline-lg font-headline-lg text-on-surface">Precision Fixtures</h2>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="px-gutter mb-8 overflow-x-auto">
+<div class="flex gap-3 whitespace-nowrap py-2">
+<button class="px-4 py-2 bg-surface-bright/20 border border-primary text-primary rounded-full text-spec-mono font-spec-mono shadow-[0_0_15px_rgba(255,186,67,0.2)]">
+                    All Units
+                </button>
+<button class="px-4 py-2 bg-surface-container border border-outline-variant/30 text-on-surface-variant rounded-full text-spec-mono font-spec-mono hover:border-primary/50 transition-colors">
+                    COB Lights
+                </button>
+<button class="px-4 py-2 bg-surface-container border border-outline-variant/30 text-on-surface-variant rounded-full text-spec-mono font-spec-mono hover:border-primary/50 transition-colors">
+                    LED Panels
+                </button>
+<button class="px-4 py-2 bg-surface-container border border-outline-variant/30 text-on-surface-variant rounded-full text-spec-mono font-spec-mono hover:border-primary/50 transition-colors">
+                    Fresnels
+                </button>
+</div>
+</section>
+<!-- Technical Grid -->
+<section class="px-gutter grid grid-cols-1 gap-6">
+<!-- Product Card 1: COB Light -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden hardware-border group border border-white/5 relative">
+<div class="absolute inset-0 light-throw-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="p-6 relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="text-spec-mono font-spec-mono text-on-surface-variant/60 block mb-1">SERIES-X</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Beam-Master 600c</h3>
+</div>
+<div class="w-12 h-12 rounded-full knurled-texture border border-white/10 flex items-center justify-center relative">
+<div class="w-1 h-1 bg-primary rounded-full absolute top-2"></div>
+</div>
+</div>
+<div class="aspect-video w-full rounded-lg bg-surface-dim mb-6 relative overflow-hidden flex items-center justify-center">
+<img class="object-contain h-full mix-blend-lighten opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A professional COB cinematic light fixture in a dark studio setting. The device features a metallic matte finish and cooling fins, with a single intense warm amber light source glowing from its center. Atmospheric dust particles catch the light in the dark midnight blue environment, creating a high-end technical photography aesthetic with sharp focus and cinematic depth of field." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD65h22AN8vJUevwYhipvXVBhnfROwxRtVNYyc2JJHZQMICrfhAT3k4M8TqkV7f-R7Jb5CO8WU19TNU_fIoI6uo62rGzHWyuNtzbwwmR4OO27-OXfRWAj7iiUUEK6zBZvc1gDDL2bRUFmls8UNcBhPyNM7K57trOjnEe0_lGLMdn9tlsFKvHzFOV4CrR2OZYd9_-MEpigHcFJ260OJxmJaF6UtJBSapD4dTNyI883NjQR-w4k2mKFcORvqmvckDP9gse0LIygY0-pM"/>
+<div class="absolute bottom-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-md border border-white/10">
+<span class="text-spec-mono font-spec-mono text-primary text-[10px]">THRO_PATTERN: CIRCULAR</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-3 rounded-lg border border-white/5">
+<span class="text-label-sm font-label-sm text-on-surface-variant/50 block mb-1">POWER_OUT</span>
+<span class="text-body-lg font-body-lg text-on-surface font-bold">600W</span>
+</div>
+<div class="bg-surface-container p-3 rounded-lg border border-white/5">
+<span class="text-label-sm font-label-sm text-on-surface-variant/50 block mb-1">COLOR_TEMP</span>
+<span class="text-body-lg font-body-lg text-on-surface font-bold">2.5K-10K</span>
+</div>
+</div>
+<button class="w-full mt-6 py-4 bg-primary text-on-primary-container font-bold rounded-xl shadow-[0_0_20px_rgba(255,186,67,0.15)] hover:shadow-[0_0_30px_rgba(255,186,67,0.3)] transition-all active:scale-95">
+                        CONFIGURE UNIT
+                    </button>
+</div>
+</div>
+<!-- Product Card 2: LED Panel -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden hardware-border group border border-white/5 relative">
+<div class="absolute inset-0 light-throw-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="p-6 relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="text-spec-mono font-spec-mono text-on-surface-variant/60 block mb-1">SOFT-SERIES</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Nova-Panel P300</h3>
+</div>
+<div class="w-12 h-12 rounded-full knurled-texture border border-white/10 flex items-center justify-center relative">
+<div class="w-1 h-1 bg-primary rounded-full absolute top-2 transform rotate-45 origin-center"></div>
+</div>
+</div>
+<div class="aspect-video w-full rounded-lg bg-surface-dim mb-6 relative overflow-hidden flex items-center justify-center">
+<img class="object-contain h-full mix-blend-lighten opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A rectangular LED soft panel light emitting a diffused golden glow against a dark midnight blue wall. The panel shows a grid of high-density LED beads. The lighting is moody and atmospheric, with the warm amber light beautifully fading into the surrounding deep shadows. Professional studio equipment style with minimal metallic beveled edges and precise engineering details." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD6nlvM8FK2ZClTdb2dOsLvq9eB0bxAL1640vWVkqr5DLFjQVPGCBqnxyrUF-U-HD1BaaRdHpIIYRkJpQY0qvzUpTQCdbpkFW4DPSe9a9Xm7cvWkhsZCzYJsqsglIiDaW-TsZ1OOV0-130MRuLFYGSyXVxyOgVK6x-L6tD1aFZp0XFBStVo26qZvpMrAN5Z7AcbKokhSjTznecnwQWYH8UCTVOsINDMPsXWQ5JSqNz74HCqylH1FhLNGKzvbESOxWmA57rdHQPYkxY"/>
+<div class="absolute bottom-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-md border border-white/10">
+<span class="text-spec-mono font-spec-mono text-primary text-[10px]">THRO_PATTERN: DIFFUSED</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-3 rounded-lg border border-white/5">
+<span class="text-label-sm font-label-sm text-on-surface-variant/50 block mb-1">POWER_OUT</span>
+<span class="text-body-lg font-body-lg text-on-surface font-bold">300W</span>
+</div>
+<div class="bg-surface-container p-3 rounded-lg border border-white/5">
+<span class="text-label-sm font-label-sm text-on-surface-variant/50 block mb-1">CRI_INDEX</span>
+<span class="text-body-lg font-body-lg text-on-surface font-bold">98+</span>
+</div>
+</div>
+<button class="w-full mt-6 py-4 bg-surface-container text-primary border border-primary/20 font-bold rounded-xl hover:bg-surface-bright/20 transition-all active:scale-95">
+                        CONFIGURE UNIT
+                    </button>
+</div>
+</div>
+<!-- Product Card 3: Compact COB -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden hardware-border group border border-white/5 relative">
+<div class="absolute inset-0 light-throw-gradient opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="p-6 relative z-10">
+<div class="flex justify-between items-start mb-6">
+<div>
+<span class="text-spec-mono font-spec-mono text-on-surface-variant/60 block mb-1">NANO-TECH</span>
+<h3 class="text-headline-md font-headline-md text-on-surface">Micro-Beam 60x</h3>
+</div>
+<div class="w-12 h-12 rounded-full knurled-texture border border-white/10 flex items-center justify-center relative">
+<div class="w-1 h-1 bg-primary rounded-full absolute top-2 transform rotate-90 origin-center"></div>
+</div>
+</div>
+<div class="aspect-video w-full rounded-lg bg-surface-dim mb-6 relative overflow-hidden flex items-center justify-center">
+<img class="object-contain h-full mix-blend-lighten opacity-80 group-hover:scale-105 transition-transform duration-700" data-alt="A ultra-compact portable LED light fixture designed for high-end video production. The device is sleek, featuring a dark carbon fiber texture and a glowing digital intensity display. It sits on a dark reflective surface, catching glints of warm amber light from its own source. The overall aesthetic is high-tech, technical, and minimalist, emphasizing precision engineering and portability." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDe6CKzuBqvyg6uANnlv5nmF6OyhFPX2vXXP5_g9OhFzvcO9I2Wa-Pa37Xax-UjC7x0olQoXfpeYkNLv_ZrV3qxBOuMEa3xUT6oBmaMvfAnjm3wsrtmR7He5Bv9brNrIQ-Mu7cG9St20wUqU0vOwpGEM6bRVI7-t1_6hRpn_e_xcyAkXw1UQsn2F-qMOJZ5ntshFe_AHop2VOJ-n6t9T9rBpUP3LRAlcCxIfQu00zz4Ni6WQQTTmt3amjblO5xU0mtecfHK8Numz1o"/>
+<div class="absolute bottom-4 left-4 bg-background/80 backdrop-blur-md px-3 py-1 rounded-md border border-white/10">
+<span class="text-spec-mono font-spec-mono text-primary text-[10px]">THRO_PATTERN: SPOT</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-surface-container p-3 rounded-lg border border-white/5">
+<span class="text-label-sm font-label-sm text-on-surface-variant/50 block mb-1">POWER_OUT</span>
+<span class="text-body-lg font-body-lg text-on-surface font-bold">60W</span>
+</div>
+<div class="bg-surface-container p-3 rounded-lg border border-white/5">
+<span class="text-label-sm font-label-sm text-on-surface-variant/50 block mb-1">BATTERY</span>
+<span class="text-body-lg font-body-lg text-on-surface font-bold">V-MOUNT</span>
+</div>
+</div>
+<button class="w-full mt-6 py-4 bg-surface-container text-primary border border-primary/20 font-bold rounded-xl hover:bg-surface-bright/20 transition-all active:scale-95">
+                        CONFIGURE UNIT
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 backdrop-blur-xl bg-surface-container-low dark:bg-surface-container-low border-t border-white/5 shadow-[0_-10px_40px_rgba(255,186,67,0.1)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-4 py-1 hover:text-primary/80 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="fluorescent">fluorescent</span>
+<span class="text-label-sm font-label-sm">Studio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold shadow-[0_0_15px_rgba(255,186,67,0.3)] bg-surface-bright/20 rounded-xl px-4 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings_remote">settings_remote</span>
+<span class="text-label-sm font-label-sm">Devices</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-4 py-1 hover:text-primary/80 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="layers">layers</span>
+<span class="text-label-sm font-label-sm">Presets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-4 py-1 hover:text-primary/80 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="text-label-sm font-label-sm">Settings</span>
+</a>
+</nav>
+</body></html>

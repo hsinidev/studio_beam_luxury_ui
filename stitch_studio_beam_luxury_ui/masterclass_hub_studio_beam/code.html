@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Space+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#93000a",
+                    "on-secondary-container": "#b0b5c3",
+                    "tertiary-fixed": "#dbe2fa",
+                    "secondary-fixed": "#dde2f1",
+                    "on-primary": "#432c00",
+                    "on-tertiary-container": "#464e61",
+                    "tertiary-fixed-dim": "#bec6dd",
+                    "on-background": "#e2e2e2",
+                    "outline": "#9f8e78",
+                    "secondary-fixed-dim": "#c1c6d5",
+                    "surface-container-high": "#282a2b",
+                    "primary-container": "#ffb000",
+                    "on-secondary": "#2b313c",
+                    "inverse-surface": "#e2e2e2",
+                    "on-tertiary": "#283042",
+                    "secondary-container": "#414753",
+                    "surface-container-low": "#1a1c1c",
+                    "on-error": "#690005",
+                    "on-surface-variant": "#d7c4ac",
+                    "surface-container": "#1e2020",
+                    "surface-bright": "#37393a",
+                    "on-tertiary-fixed-variant": "#3f475a",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#805600",
+                    "surface-variant": "#333535",
+                    "background": "#121414",
+                    "inverse-on-surface": "#2f3131",
+                    "surface-container-highest": "#333535",
+                    "surface": "#121414",
+                    "outline-variant": "#524533",
+                    "on-secondary-fixed-variant": "#414753",
+                    "primary-fixed": "#ffddaf",
+                    "tertiary-container": "#b7bfd6",
+                    "surface-tint": "#ffba43",
+                    "primary": "#ffd597",
+                    "on-primary-container": "#6a4700",
+                    "surface-dim": "#121414",
+                    "tertiary": "#d3dbf3",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-secondary-fixed": "#161c26",
+                    "error": "#ffb4ab",
+                    "on-surface": "#e2e2e2",
+                    "secondary": "#c1c6d5",
+                    "on-tertiary-fixed": "#131b2c",
+                    "on-primary-fixed-variant": "#614000",
+                    "primary-fixed-dim": "#ffba43",
+                    "on-primary-fixed": "#281800"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin": "64px",
+                    "unit": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Epilogue"],
+                    "body-md": ["Space Grotesk"],
+                    "body-lg": ["Space Grotesk"],
+                    "headline-lg": ["Epilogue"],
+                    "spec-mono": ["Space Grotesk"],
+                    "label-sm": ["Space Grotesk"],
+                    "headline-xl": ["Epilogue"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "spec-mono": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .knurled-texture {
+            background-image: radial-gradient(circle, #ffd5971a 1px, transparent 1px);
+            background-size: 4px 4px;
+        }
+        .bloom-glow {
+            box-shadow: 0 0 40px rgba(255, 186, 67, 0.15);
+        }
+        .glass-panel {
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-hidden h-screen flex">
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 bottom-0 w-64 flex flex-col z-50 bg-surface-container-low border-r border-outline-variant bg-gradient-to-b from-surface-container-low to-surface shadow-[10px_0_30px_rgba(0,0,0,0.5)]">
+<div class="p-6 flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">wb_iridescent</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Studio-Beam</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-70">Pro Control v2.4</p>
+</div>
+</div>
+<button class="mt-6 w-full py-3 px-4 bg-primary text-on-primary font-bold rounded-lg shadow-[0_0_20px_rgba(255,186,67,0.2)] hover:shadow-[0_0_30px_rgba(255,186,67,0.4)] transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">add</span>
+                New Project
+            </button>
+</div>
+<nav class="mt-4 flex-grow">
+<!-- Dashboard (Inactive) -->
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:text-on-surface hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Dashboard</span>
+</a>
+<!-- Luminaires (Active - Context: Lighting Hub) -->
+<a class="flex items-center gap-4 bg-primary/10 text-primary border-r-2 border-primary px-6 py-4 shadow-[0_0_20px_rgba(255,186,67,0.15)] transition-transform active:scale-[0.98]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">wb_iridescent</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest font-bold">Luminaires</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:text-on-surface hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Scenes</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:text-on-surface hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Community</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:text-on-surface hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest">Support</span>
+</a>
+</nav>
+<div class="mt-auto p-4 border-t border-outline-variant/30">
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-3 hover:text-on-surface hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-sm text-label-sm">Documentation</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-3 hover:text-on-surface hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-sm text-label-sm">Log Out</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 flex-grow h-screen overflow-y-auto bg-background relative scroll-smooth">
+<!-- TopNavBar (Shared Component Shell Mapping) -->
+<header class="sticky top-0 h-16 flex items-center justify-between px-12 z-40 bg-surface/80 backdrop-blur-xl border-b border-outline-variant shadow-[0_4px_30px_rgba(255,186,67,0.05)]">
+<div class="flex items-center gap-8">
+<h2 class="font-headline-md text-headline-md font-bold tracking-tight text-primary">Masterclass Hub</h2>
+<nav class="hidden md:flex gap-6">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm" href="#">COURSE VIEW</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-sm text-label-sm" href="#">RESOURCE LIBRARY</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<input class="bg-surface-container-low border border-outline-variant rounded-full py-1.5 px-10 text-label-sm focus:ring-1 focus:ring-primary focus:outline-none w-64" placeholder="Search lessons..." type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+</div>
+<div class="flex items-center gap-2 border-l border-outline-variant pl-4">
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all rounded-full"><span class="material-symbols-outlined">notifications</span></button>
+<button class="p-2 text-on-surface-variant hover:text-primary hover:bg-surface-container-high transition-all rounded-full"><span class="material-symbols-outlined">settings</span></button>
+<button class="p-2 text-primary hover:bg-surface-container-high transition-all rounded-full"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span></button>
+</div>
+</div>
+</header>
+<section class="p-12 max-w-screen-2xl mx-auto flex flex-col gap-8">
+<!-- Video Player & Curriculum Bento Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Main Featured Player -->
+<div class="col-span-8 space-y-6">
+<div class="relative aspect-video rounded-xl overflow-hidden bg-black shadow-2xl group border border-outline-variant/20">
+<img class="w-full h-full object-cover opacity-60" data-alt="A professional high-end cinematic video player interface showing a masterclass on lighting. The video content features a DP adjusting a large Fresnel spotlight on a moody film set with deep blue shadows and warm amber light hitting a model. The UI includes custom amber-glow controls, a sleek progress bar, and a minimalist volume slider against the dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCYTQ8zLaL-K-7BiINaugB12S39Hla2QFy2Enxoi2zI-CU5Y-eiDbttNb1GifxGsH_0CElGRHB_hwr_jAdvoF9Q01unLmZGcjexJLj2LOIkgrNwT6IzLBTFEct4aiH81CBZD9r5mMMHTsx6w_AKcKhKPir6DBdBa8lXCxo0vLi1ECTi3_wc4CwoTZ9wzL3PnzQPrKIT32OrPbQLfcFb0RuoSkuBQWs-tOrcEq6m2Zo6wjeFU1HJSPYArELjOkdwoqw0AgTsPqS7zg"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<button class="w-20 h-20 bg-primary text-on-primary rounded-full flex items-center justify-center bloom-glow scale-100 hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-[48px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black to-transparent flex flex-col gap-4">
+<div class="w-full h-1.5 bg-surface-variant rounded-full relative overflow-hidden">
+<div class="absolute left-0 top-0 h-full w-1/3 bg-primary shadow-[0_0_10px_#ffd597]"></div>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">volume_up</span>
+<span class="font-spec-mono text-spec-mono text-on-surface">12:45 / 42:00</span>
+</div>
+<div class="flex items-center gap-6">
+<span class="material-symbols-outlined">subtitles</span>
+<span class="material-symbols-outlined">settings</span>
+<span class="material-symbols-outlined">fullscreen</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex items-center gap-3">
+<span class="bg-primary/10 text-primary border border-primary/20 px-3 py-1 rounded-full font-spec-mono text-[10px] uppercase tracking-widest">Session 04</span>
+<h3 class="font-headline-lg text-headline-lg">Modeling with Chiaroscuro</h3>
+</div>
+<p class="text-on-surface-variant text-body-lg max-w-3xl">In this session, we dive deep into the Renaissance technique of chiaroscuro, exploring how to use high-contrast lighting to create dramatic tension and three-dimensional form in a controlled studio environment.</p>
+</div>
+</div>
+<!-- Curriculum Sidebar -->
+<div class="col-span-4 flex flex-col h-full gap-4">
+<div class="glass-panel bg-surface-container-low rounded-xl p-6 flex flex-col h-full shadow-xl">
+<div class="flex items-center justify-between mb-6">
+<h4 class="font-headline-md text-headline-md font-bold tracking-tight">Curriculum</h4>
+<span class="font-spec-mono text-spec-mono text-primary">28% Complete</span>
+</div>
+<div class="flex flex-col gap-2 overflow-y-auto pr-2 custom-scrollbar">
+<!-- Lesson 1 -->
+<div class="p-4 rounded-lg bg-surface-variant/30 border border-outline-variant/10 flex gap-4 items-center cursor-pointer hover:bg-surface-variant/50 transition-all">
+<div class="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex-grow">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">Lesson 01</p>
+<p class="font-body-md text-body-md text-on-surface">The Physics of Light</p>
+</div>
+<span class="font-spec-mono text-spec-mono opacity-50">15:00</span>
+</div>
+<!-- Lesson 2 -->
+<div class="p-4 rounded-lg bg-surface-variant/30 border border-outline-variant/10 flex gap-4 items-center cursor-pointer hover:bg-surface-variant/50 transition-all">
+<div class="w-8 h-8 rounded-full border-2 border-primary flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">check</span>
+</div>
+<div class="flex-grow">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">Lesson 02</p>
+<p class="font-body-md text-body-md text-on-surface">Source Selection &amp; Shape</p>
+</div>
+<span class="font-spec-mono text-spec-mono opacity-50">24:12</span>
+</div>
+<!-- Lesson 3 (Current) -->
+<div class="p-4 rounded-lg bg-primary/10 border border-primary/30 flex gap-4 items-center shadow-[0_0_15px_rgba(255,186,67,0.05)]">
+<div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+</div>
+<div class="flex-grow">
+<p class="font-label-sm text-label-sm text-primary uppercase tracking-tighter font-bold">Currently Playing</p>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Modeling with Chiaroscuro</p>
+</div>
+<span class="font-spec-mono text-spec-mono text-primary">42:00</span>
+</div>
+<!-- Lesson 4 -->
+<div class="p-4 rounded-lg border border-outline-variant/10 flex gap-4 items-center opacity-60">
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<div class="flex-grow">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">Lesson 04</p>
+<p class="font-body-md text-body-md text-on-surface">Negative Fill Mastery</p>
+</div>
+<span class="font-spec-mono text-spec-mono opacity-50">18:45</span>
+</div>
+<!-- Lesson 5 -->
+<div class="p-4 rounded-lg border border-outline-variant/10 flex gap-4 items-center opacity-60">
+<div class="w-8 h-8 rounded-full border-2 border-outline-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+</div>
+<div class="flex-grow">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-tighter">Lesson 05</p>
+<p class="font-body-md text-body-md text-on-surface">Practical Integration</p>
+</div>
+<span class="font-spec-mono text-spec-mono opacity-50">31:10</span>
+</div>
+</div>
+<button class="mt-auto pt-6 border-t border-outline-variant/20 flex items-center justify-center gap-2 text-primary hover:opacity-80 transition-opacity">
+<span class="material-symbols-outlined">download</span>
+<span class="font-label-sm text-label-sm">DOWNLOAD COURSE GUIDE (PDF)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Lower Section: Diagrams and Comments -->
+<div class="grid grid-cols-12 gap-8 mt-4">
+<!-- Lighting Diagrams -->
+<div class="col-span-7 flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-md text-headline-md font-bold">Technical Diagrams</h4>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant rounded hover:bg-surface-variant transition-all"><span class="material-symbols-outlined">grid_view</span></button>
+<button class="p-2 border border-outline-variant rounded hover:bg-surface-variant transition-all"><span class="material-symbols-outlined">list</span></button>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="group relative aspect-[4/3] rounded-xl bg-surface-container-high border border-outline-variant/20 overflow-hidden cursor-pointer hover:border-primary transition-all">
+<div class="absolute inset-0 knurled-texture opacity-30"></div>
+<img class="w-full h-full object-cover opacity-50 transition-opacity group-hover:opacity-80" data-alt="A technical lighting blueprint illustration for a film production. The image shows a top-down schematic view of a studio setup with icons for a key light, fill light, and back light. The diagram uses clean amber lines on a deep blue background with technical measurements and annotations in white spec-mono typography. The atmosphere is professional and precise." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCje2O5H_c901rnKwODGCI5l0hFzN06HnAFo7MoAx0myqu4rJVTY75sjDmuSgngMNcSsQCFpaGzrzL8myJqjWfRdi6Gy-G-92YXhZ_VWyi3vSihJ9vUAOa_vVTFZkWMKdNI-X64Ds-pK4JJoNmsfiyoUm3LOcNJRnP-5ICxggb-II2gH5dYz1d_emYL1mpflgw1vct8oygarhePHVHcEPaD50DSd4uOlYFCnAdg7DqN-kLhliig6SxcTK32EGrnWcIJ8xbZBT8AeGw"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+<p class="font-label-sm text-label-sm text-primary">DIAGRAM_S4_A1.PDF</p>
+<p class="text-[12px] text-on-surface opacity-70">Rembrandt Three-Point Setup</p>
+</div>
+<div class="absolute top-4 right-4 bg-primary text-on-primary p-1.5 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</div>
+</div>
+<div class="group relative aspect-[4/3] rounded-xl bg-surface-container-high border border-outline-variant/20 overflow-hidden cursor-pointer hover:border-primary transition-all">
+<div class="absolute inset-0 knurled-texture opacity-30"></div>
+<img class="w-full h-full object-cover opacity-50 transition-opacity group-hover:opacity-80" data-alt="A detailed lighting ratio chart with technical plots and vector-style gear icons. The aesthetic matches a high-end engineering manual with dark navy backgrounds and glowing amber indicators for light intensity levels. The chart depicts Kelvin temperatures and lux levels for cinematic production design in a clean minimalist layout." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnQJgEEHp9zvNr9_Bi0tli6dns0hvnZdAFO4xTU57wxNvKy7f7DL2I1LRpCcyGO-n5dHdR76wLxRcprgxC3m0V3InDirdE9QZ99gJpRKV0MgXoB-IquK-N4ACJloaGyVVVegmcZQZUvsReD_8Xuhv6tTA5XRVPll6zTuMq9q7CdlFlBuUJJqKzTKoweHiRFymv30ctwK884xUIDGHJFEvWqsx5xa083pRbPs7IlnmhhQUzOFlp4G3V694WasREiX2hLVNlqI3pTXs"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+<p class="font-label-sm text-label-sm text-primary">RATIO_MAP_V2.PDF</p>
+<p class="text-[12px] text-on-surface opacity-70">Intensity &amp; Falloff Charts</p>
+</div>
+<div class="absolute top-4 right-4 bg-primary text-on-primary p-1.5 rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Student Comments -->
+<div class="col-span-5 flex flex-col gap-6">
+<h4 class="font-headline-md text-headline-md font-bold">Discussion</h4>
+<div class="flex flex-col gap-4">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of a young male lighting student with a thoughtful expression in a dimly lit environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhvypN8gWkVhtC5KPO-XESAuc8JFFr9dgIc3u0JBaiqFGosZmBQeWCc-k2upmFT_keSltfuyOYs4-fNA_wsgip73sMknEBW2VabWOUJAcZBqh_5YpZRA_A3yGOPNVx1NoD9gTJYEUFYE-3-1DB98OnX8T7jW_uQ3wG8NuZZUXolq9qq6uPQJboNdzDUHHMHddWaWzrsaVv7qVmhfN_Fv9f1zFpmrauSzU_I_KPB70UK8BsNCfqMBZgwNZObm6enmURxrBAppqZFWE"/>
+</div>
+<div class="flex-grow space-y-2">
+<div class="bg-surface-container-high rounded-lg p-4 border border-outline-variant/10">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-primary">Marcus V.</span>
+<span class="text-[10px] text-on-surface-variant">2h ago</span>
+</div>
+<p class="text-body-md text-on-surface-variant">Quick question on the key light placement—are we looking for a 45-degree horizontal or does vertical height change the chiaroscuro effect more significantly?</p>
+</div>
+<div class="flex gap-4 pl-2">
+<button class="flex items-center gap-1 text-[12px] text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">thumb_up</span> 12</button>
+<button class="flex items-center gap-1 text-[12px] text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">reply</span> Reply</button>
+</div>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full overflow-hidden bg-surface-variant flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Portrait of a professional female cinematographer with glasses in a tech-focused studio." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJwOfPT4DRsdlcPE90XoBlH88c0grYYQGZnYxB1V2VjGKtLAk6G9hQwdWcgmLxtPnIGRv6Nc92RbIYLlGOUbysi0Xrc7nH_eAbNAheNGhzw_X-PiJ98elLahzWImqIEl7b4R6lvi1XltmDsFne4SZ7cIFOiGQG_KX5ZuRwZdqg9pbMhAt66-s3_j1wSW9vzbp36YGdehcVAL8SnUPwcID-BmbUSBwFvP-GWFtxQ3e1_9j3yBcdPmMhhZCNt9NDRmNJVWLRiBqXpbs"/>
+</div>
+<div class="flex-grow space-y-2">
+<div class="bg-surface-container-high rounded-lg p-4 border border-outline-variant/10">
+<div class="flex justify-between items-center mb-1">
+<span class="font-label-sm text-label-sm text-primary">Elena R.</span>
+<span class="text-[10px] text-on-surface-variant">5h ago</span>
+</div>
+<p class="text-body-md text-on-surface-variant">The section on negative fill completely changed my approach to interior scenes. The diagram for the apartment setup was particularly helpful!</p>
+</div>
+<div class="flex gap-4 pl-2">
+<button class="flex items-center gap-1 text-[12px] text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">thumb_up</span> 28</button>
+<button class="flex items-center gap-1 text-[12px] text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">reply</span> Reply</button>
+</div>
+</div>
+</div>
+<!-- Comment Input -->
+<div class="mt-4 flex gap-4 bg-surface-container-low p-4 rounded-xl border border-primary/20 bloom-glow">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_circle</span>
+</div>
+<div class="flex-grow relative">
+<textarea class="w-full bg-transparent border-none focus:ring-0 text-body-md resize-none" placeholder="Add to the masterclass discussion..." rows="2"></textarea>
+<div class="flex justify-between items-center pt-2">
+<div class="flex gap-2">
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[20px]">attach_file</span></button>
+<button class="text-on-surface-variant hover:text-primary"><span class="material-symbols-outlined text-[20px]">mood</span></button>
+</div>
+<button class="bg-primary text-on-primary font-bold px-6 py-2 rounded-lg text-label-sm transition-all hover:scale-105 active:scale-95">POST COMMENT</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Floating Hardware Dial (Unique Brand Component) -->
+<div class="fixed bottom-12 right-12 z-50 group">
+<div class="relative w-24 h-24 rounded-full bg-surface-container border-4 border-outline-variant/30 flex items-center justify-center shadow-2xl knurled-texture">
+<div class="absolute inset-0 w-full h-full rounded-full border border-primary/10 animate-pulse"></div>
+<!-- Dial Indicator Dot -->
+<div class="absolute top-2 w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_#ffd597]"></div>
+<div class="flex flex-col items-center">
+<span class="font-spec-mono text-[10px] text-primary">INTENSITY</span>
+<span class="font-headline-md text-headline-md text-on-surface">85%</span>
+</div>
+<!-- Label Tooltip -->
+<div class="absolute -top-12 left-1/2 -translate-x-1/2 bg-black text-primary px-3 py-1 rounded text-label-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                    Hardware Preview Mode
+                </div>
+</div>
+</div>
+</main>
+</body></html>

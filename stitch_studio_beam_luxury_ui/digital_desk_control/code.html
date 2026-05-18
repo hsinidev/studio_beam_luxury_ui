@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;600;700&amp;family=Space+Grotesk:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .knurled-texture {
+      background-image: radial-gradient(#ffffff10 1px, transparent 0);
+      background-size: 4px 4px;
+    }
+    .light-throw-primary {
+      background: radial-gradient(circle at 20% 20%, rgba(255, 186, 67, 0.08) 0%, transparent 70%);
+    }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container": "#1e2020",
+            "surface-dim": "#121414",
+            "error-container": "#93000a",
+            "tertiary-fixed-dim": "#bec6dd",
+            "surface-tint": "#ffba43",
+            "primary-fixed-dim": "#ffba43",
+            "on-secondary-fixed": "#161c26",
+            "on-error": "#690005",
+            "tertiary-fixed": "#dbe2fa",
+            "secondary": "#c1c6d5",
+            "surface-bright": "#37393a",
+            "secondary-fixed-dim": "#c1c6d5",
+            "on-surface-variant": "#d7c4ac",
+            "surface-container-highest": "#333535",
+            "on-primary-fixed": "#281800",
+            "on-tertiary-container": "#464e61",
+            "surface-container-high": "#282a2b",
+            "tertiary": "#d3dbf3",
+            "on-background": "#e2e2e2",
+            "on-tertiary-fixed": "#131b2c",
+            "on-secondary-container": "#b0b5c3",
+            "on-primary-fixed-variant": "#614000",
+            "on-tertiary": "#283042",
+            "on-primary": "#432c00",
+            "surface-container-low": "#1a1c1c",
+            "on-surface": "#e2e2e2",
+            "inverse-primary": "#805600",
+            "primary-container": "#ffb000",
+            "primary-fixed": "#ffddaf",
+            "secondary-fixed": "#dde2f1",
+            "inverse-surface": "#e2e2e2",
+            "on-error-container": "#ffdad6",
+            "outline": "#9f8e78",
+            "outline-variant": "#524533",
+            "on-secondary": "#2b313c",
+            "primary": "#ffd597",
+            "on-secondary-fixed-variant": "#414753",
+            "on-tertiary-fixed-variant": "#3f475a",
+            "surface-variant": "#333535",
+            "inverse-on-surface": "#2f3131",
+            "tertiary-container": "#b7bfd6",
+            "background": "#121414",
+            "error": "#ffb4ab",
+            "surface": "#121414",
+            "secondary-container": "#414753",
+            "on-primary-container": "#6a4700",
+            "surface-container-lowest": "#0c0f0f"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.125rem",
+            "lg": "0.25rem",
+            "xl": "0.5rem",
+            "full": "0.75rem"
+          },
+          "spacing": {
+            "unit": "8px",
+            "gutter": "24px",
+            "margin": "64px",
+            "container-max": "1440px"
+          },
+          "fontFamily": {
+            "headline-xl": ["Epilogue"],
+            "headline-lg": ["Epilogue"],
+            "spec-mono": ["Space Grotesk"],
+            "body-md": ["Space Grotesk"],
+            "body-lg": ["Space Grotesk"],
+            "headline-md": ["Epilogue"],
+            "label-sm": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "spec-mono": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+            "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "500"}],
+            "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-dim text-on-surface min-h-screen selection:bg-primary-container/30">
+<!-- TopAppBar -->
+<header class="bg-surface-dim dark:bg-surface-dim border-b border-outline-variant/30 docked full-width top-0 z-50 sticky">
+<div class="flex justify-between items-center px-gutter py-unit w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<h1 class="text-headline-md font-headline-md font-bold tracking-tighter text-primary dark:text-primary">Studio-Beam</h1>
+</div>
+<div class="flex items-center gap-4 text-spec-mono font-spec-mono text-on-surface-variant">
+<span class="flex items-center gap-1">100% <span class="material-symbols-outlined text-[16px]" data-icon="battery_full">battery_full</span></span>
+</div>
+</div>
+</header>
+<main class="px-gutter pb-32 pt-6 max-w-md mx-auto space-y-8 light-throw-primary">
+<!-- Hero Hardware Component: Main Controller Dial -->
+<section class="flex flex-col items-center justify-center py-4">
+<div class="relative group">
+<!-- Radial Glow -->
+<div class="absolute inset-0 bg-primary/10 blur-[60px] rounded-full scale-150 pointer-events-none"></div>
+<!-- Outer Ring -->
+<div class="w-64 h-64 rounded-full bg-surface-container-high border border-white/5 flex items-center justify-center shadow-2xl relative z-10">
+<!-- Dial Surface -->
+<div class="w-56 h-56 rounded-full bg-surface-dim border border-outline-variant/20 shadow-inner flex items-center justify-center knurled-texture">
+<div class="w-48 h-48 rounded-full bg-surface-container-low border border-white/10 flex flex-col items-center justify-center text-center relative overflow-hidden">
+<!-- Internal Light Source -->
+<div class="absolute -top-10 -left-10 w-32 h-32 bg-primary/5 blur-3xl"></div>
+<span class="text-spec-mono font-spec-mono text-primary/60 tracking-widest uppercase">Intensity</span>
+<span class="text-headline-xl font-headline-xl text-on-surface">84<span class="text-headline-md font-headline-md text-on-surface-variant">%</span></span>
+<!-- Indicator Dot -->
+<div class="absolute bottom-6 w-2 h-2 rounded-full bg-primary shadow-[0_0_10px_rgba(255,186,67,0.8)]"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Preset Groups -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h2 class="text-spec-mono font-spec-mono text-on-surface-variant uppercase tracking-widest">Light Groups</h2>
+<span class="text-label-sm font-label-sm text-primary">3 Active</span>
+</div>
+<div class="grid grid-cols-3 gap-3">
+<!-- Main Group Card -->
+<div class="bg-surface-container-high border border-primary/20 p-4 rounded-xl shadow-[0_0_20px_rgba(255,186,67,0.1)] flex flex-col gap-2 items-center text-center transition-transform active:scale-95">
+<span class="material-symbols-outlined text-primary" data-icon="light_mode" style="font-variation-settings: 'FILL' 1;">light_mode</span>
+<span class="text-label-sm font-label-sm text-on-surface">Main</span>
+</div>
+<!-- Fill Group Card -->
+<div class="bg-surface-container-low border border-white/5 p-4 rounded-xl flex flex-col gap-2 items-center text-center text-on-surface-variant/60">
+<span class="material-symbols-outlined" data-icon="filter_vintage">filter_vintage</span>
+<span class="text-label-sm font-label-sm">Fill</span>
+</div>
+<!-- Back Group Card -->
+<div class="bg-surface-container-low border border-white/5 p-4 rounded-xl flex flex-col gap-2 items-center text-center text-on-surface-variant/60">
+<span class="material-symbols-outlined" data-icon="flare">flare</span>
+<span class="text-label-sm font-label-sm">Back</span>
+</div>
+</div>
+</section>
+<!-- Color Temp Slider -->
+<section class="space-y-6">
+<div class="flex justify-between items-center">
+<label class="text-spec-mono font-spec-mono text-on-surface-variant uppercase tracking-widest">Color Temp</label>
+<span class="text-body-md font-body-md text-on-surface">5600K</span>
+</div>
+<div class="relative h-10 flex items-center">
+<!-- Slider Track with Kelvin Gradient -->
+<div class="absolute inset-0 h-2 my-auto w-full rounded-full bg-gradient-to-r from-[#ff8c00] via-[#ffffff] to-[#87ceeb] opacity-30"></div>
+<!-- Active Track -->
+<div class="absolute h-2 my-auto w-[65%] rounded-full bg-gradient-to-r from-[#ff8c00] via-[#ffffff] to-[#fff] shadow-[0_0_10px_rgba(255,255,255,0.2)]"></div>
+<!-- Hardware Thumb -->
+<div class="absolute left-[65%] -translate-x-1/2 w-8 h-8 rounded-full bg-on-surface border-4 border-surface-dim shadow-[0_0_20px_rgba(255,255,255,0.4)] flex items-center justify-center">
+<div class="w-1 h-3 bg-surface-dim/20 rounded-full"></div>
+</div>
+</div>
+<div class="flex justify-between text-label-sm font-label-sm text-on-surface-variant/40">
+<span>2700K</span>
+<span>6500K</span>
+</div>
+</section>
+<!-- Device Details & Status -->
+<section class="bg-surface-container-lowest border border-white/5 rounded-2xl p-6 space-y-4">
+<div class="flex justify-between items-center border-b border-white/5 pb-4">
+<div class="flex flex-col">
+<span class="text-label-sm font-label-sm text-primary/60">Connected Device</span>
+<span class="text-body-lg font-body-lg font-bold text-on-surface">Panel-Pro 200X</span>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary/10 border border-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-[20px]" data-icon="wifi">wifi</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant/50">Uptime</span>
+<p class="text-spec-mono font-spec-mono text-on-surface">04:12:45</p>
+</div>
+<div class="space-y-1">
+<span class="text-label-sm font-label-sm text-on-surface-variant/50">Internal Temp</span>
+<p class="text-spec-mono font-spec-mono text-on-surface">32°C</p>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-4 bg-primary text-on-primary rounded-xl font-bold flex items-center justify-center gap-2 shadow-[0_15px_30px_rgba(255,186,67,0.2)] active:scale-95 transition-transform">
+<span class="material-symbols-outlined" data-icon="power_settings_new">power_settings_new</span>
+          ALL OFF
+        </button>
+</div>
+</section>
+<!-- Visual Anchor: Studio Environment -->
+<div class="rounded-3xl overflow-hidden border border-white/5 relative h-48 group">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="A professional photography studio at night, filled with high-end LED panel lights on heavy-duty C-stands. The environment is dark and atmospheric, with the only light coming from the glowing control interfaces of the hardware. Subtle orange and blue light leaks highlight the metallic textures of the gear. The mood is sophisticated and precision-focused, reflecting a high-tech creative workspace." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmbR5sUJUHuHhTRLdPH5f8ixORzXgVo2OTpsUtb2oB1KqC3EIrg7s7R72_fMqoahZzgy3nucqC9rCt3N33SQuR5OHratUlfHp83eUIzVptClblfE4ncR-ypD8KybWQv6T4iARj-0pJ6bpJkFsn6aROMYQP_1YqlZgCp0-9UiPu7o1lYrVn1wEnIFUIO1_zOl6ERjtRzvfD6KFJ4PgqeI4ea_Idr9pBdwowkRSCUqpTqw3CLCi4iFoNLtGUvktDB9DVVQQ8AOESHi4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<span class="text-spec-mono font-spec-mono text-primary text-xs bg-surface-dim/80 backdrop-blur-md px-3 py-1 rounded-full border border-primary/20">LIVE MONITOR</span>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 backdrop-blur-xl bg-surface-container-low dark:bg-surface-container-low border-t border-white/5 shadow-[0_-10px_40px_rgba(255,186,67,0.1)] rounded-t-xl">
+<!-- Studio Active -->
+<a class="flex flex-col items-center justify-center text-primary font-bold shadow-[0_0_15px_rgba(255,186,67,0.3)] bg-surface-bright/20 rounded-xl px-4 py-1 scale-90 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="fluorescent" style="font-variation-settings: 'FILL' 1;">fluorescent</span>
+<span class="text-label-sm font-label-sm">Studio</span>
+</a>
+<!-- Devices -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-4 py-1 hover:text-primary/80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings_remote">settings_remote</span>
+<span class="text-label-sm font-label-sm">Devices</span>
+</a>
+<!-- Presets -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-4 py-1 hover:text-primary/80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="layers">layers</span>
+<span class="text-label-sm font-label-sm">Presets</span>
+</a>
+<!-- Settings -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-4 py-1 hover:text-primary/80 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="text-label-sm font-label-sm">Settings</span>
+</a>
+</nav>
+</body></html>

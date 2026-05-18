@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error-container": "#93000a",
+                    "on-secondary-container": "#b0b5c3",
+                    "tertiary-fixed": "#dbe2fa",
+                    "secondary-fixed": "#dde2f1",
+                    "on-primary": "#432c00",
+                    "on-tertiary-container": "#464e61",
+                    "tertiary-fixed-dim": "#bec6dd",
+                    "on-background": "#e2e2e2",
+                    "outline": "#9f8e78",
+                    "secondary-fixed-dim": "#c1c6d5",
+                    "surface-container-high": "#282a2b",
+                    "primary-container": "#ffb000",
+                    "on-secondary": "#2b313c",
+                    "inverse-surface": "#e2e2e2",
+                    "on-tertiary": "#283042",
+                    "secondary-container": "#414753",
+                    "surface-container-low": "#1a1c1c",
+                    "on-error": "#690005",
+                    "on-surface-variant": "#d7c4ac",
+                    "surface-container": "#1e2020",
+                    "surface-bright": "#37393a",
+                    "on-tertiary-fixed-variant": "#3f475a",
+                    "on-error-container": "#ffdad6",
+                    "inverse-primary": "#805600",
+                    "surface-variant": "#333535",
+                    "background": "#121414",
+                    "inverse-on-surface": "#2f3131",
+                    "surface-container-highest": "#333535",
+                    "surface": "#121414",
+                    "outline-variant": "#524533",
+                    "on-secondary-fixed-variant": "#414753",
+                    "primary-fixed": "#ffddaf",
+                    "tertiary-container": "#b7bfd6",
+                    "surface-tint": "#ffba43",
+                    "primary": "#ffd597",
+                    "on-primary-container": "#6a4700",
+                    "surface-dim": "#121414",
+                    "tertiary": "#d3dbf3",
+                    "surface-container-lowest": "#0c0f0f",
+                    "on-secondary-fixed": "#161c26",
+                    "error": "#ffb4ab",
+                    "on-surface": "#e2e2e2",
+                    "secondary": "#c1c6d5",
+                    "on-tertiary-fixed": "#131b2c",
+                    "on-primary-fixed-variant": "#614000",
+                    "primary-fixed-dim": "#ffba43",
+                    "on-primary-fixed": "#281800"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1440px",
+                    "margin": "64px",
+                    "unit": "8px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Epilogue"],
+                    "body-md": ["Space Grotesk"],
+                    "body-lg": ["Space Grotesk"],
+                    "headline-lg": ["Epilogue"],
+                    "spec-mono": ["Space Grotesk"],
+                    "label-sm": ["Space Grotesk"],
+                    "headline-xl": ["Epilogue"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                    "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "spec-mono": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+                    "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .knurled-texture {
+            background-image: radial-gradient(circle, #ffd597 1px, transparent 1px);
+            background-size: 4px 4px;
+            opacity: 0.1;
+        }
+        .light-bloom {
+            box-shadow: 0 0 40px 5px rgba(255, 186, 67, 0.15);
+        }
+        .beveled-edge {
+            box-shadow: inset 1px 1px 0px 0px rgba(255, 255, 255, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary selection:text-on-primary">
+<!-- Sidebar Navigation -->
+<aside class="fixed left-0 top-0 bottom-0 w-64 flex flex-col z-50 bg-surface-container-low border-r border-outline-variant bg-gradient-to-b from-surface-container-low to-surface shadow-[10px_0_30px_rgba(0,0,0,0.5)]">
+<div class="p-6">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary light-bloom">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">wb_iridescent</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary tracking-tight">Studio-Beam</h1>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-70">Pro Control v2.4</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary font-label-sm text-label-sm py-4 rounded-lg light-bloom hover:brightness-110 transition-all mb-10 tracking-widest uppercase">
+                New Project
+            </button>
+<nav class="space-y-1">
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:text-on-surface hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-label-sm text-label-sm">Dashboard</span>
+</a>
+<a class="flex items-center gap-4 bg-primary/10 text-primary border-r-2 border-primary px-6 py-4 shadow-[0_0_20px_rgba(255,186,67,0.15)]" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">wb_iridescent</span>
+<span class="font-label-sm text-label-sm">Luminaires</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:text-on-surface hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">layers</span>
+<span class="font-label-sm text-label-sm">Scenes</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:text-on-surface hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-label-sm text-label-sm">Community</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:text-on-surface hover:bg-surface-variant transition-all duration-200" href="#">
+<span class="material-symbols-outlined">help_center</span>
+<span class="font-label-sm text-label-sm">Support</span>
+</a>
+</nav>
+</div>
+<div class="mt-auto p-6 border-t border-outline-variant/30">
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:text-on-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+<span class="font-label-sm text-label-sm">Documentation</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant px-6 py-4 hover:text-on-surface transition-all duration-200" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-label-sm text-label-sm">Log Out</span>
+</a>
+</div>
+</aside>
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 right-0 left-64 h-16 flex items-center justify-between px-margin z-40 border-b border-outline-variant bg-surface/80 backdrop-blur-xl shadow-[0_4px_30px_rgba(255,186,67,0.05)]">
+<div class="flex items-center gap-8">
+<span class="font-headline-md text-headline-md font-bold tracking-tight text-primary">Beam-Master 600c</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-sm text-label-sm" href="#">Overview</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-sm text-label-sm" href="#">Specs</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-sm text-label-sm" href="#">Accessories</a>
+<a class="text-on-surface-variant hover:text-on-surface transition-colors font-label-sm text-label-sm" href="#">Reviews</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative">
+<span class="absolute inset-y-0 left-3 flex items-center text-on-surface-variant">
+<span class="material-symbols-outlined text-sm">search</span>
+</span>
+<input class="bg-surface-container-high border-none rounded-lg pl-10 pr-4 py-2 text-on-surface font-body-md text-body-md focus:ring-1 focus:ring-primary w-64" placeholder="Search firmware..." type="text"/>
+</div>
+<div class="flex items-center gap-3 ml-4">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-all duration-300 rounded-lg hover:bg-surface-container-high">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-all duration-300 rounded-lg hover:bg-surface-container-high">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<button class="p-1 rounded-full border border-outline-variant">
+<img alt="User Profile" class="w-8 h-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrdVVbf4iVRbA7fotNHmp-ESwK0k7KtdCVVXpbiTEcq4H0A9C78lLkjgIBq7EPeB3YxgtqwiTevzKv4_nBC70MnB7R8mt_0p1IZn5K2FAn6-MIYPIe_fMifOPiCTrLQegrdy0BTcn6S-S79322g3HGoLWyKms1pndwA30lH55J6b75wXIpODeXiPW7IoUjeUTZA_lY0x-2E1EqUVzwaWMnFHEYTfEBg0r9w1XzZMUD7Y-PwN6CXheDa69TnVo8vPXAw91BolMuzzc"/>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<!-- Cinematic Hero Section -->
+<section class="relative h-[819px] flex items-center px-margin overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover opacity-60" data-alt="A cinematic studio environment captured in low light, featuring a high-end Beam-Master 600c light fixture casting a powerful, focused golden glow across a dark, textured set. The atmosphere is professional and dramatic, with subtle lens flares and a shallow depth of field. The lighting highlights the precision engineering of the matte black hardware." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAU1NaLziyXd0_IOjUNfWqu447L0AYShdDwvMja9ws1FjnhlJBNkxolEegLesT6D_vntoGBlvxab3vSShT1C34JJyBTDVEEC5Pjr-N26I5C5ykA21UK8Um0FGOek6Jx-SCU18UapwVb6nrry8ryKArn5fGwY-4u0pYjEEjdXdR-Yls4KYdmXnvvefh8bD7Ll-oa0F8_xuwM5W3Esz_pyRvVIVA-1xJUbc2xcZeLj_tTg3T7_iaFv1Q6uRWUCt7A7frn6DPBMfs6oI8"/>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/60 to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-2xl">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 mb-6">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-spec-mono text-spec-mono text-primary uppercase">Professional Cinema Grade</span>
+</div>
+<h2 class="font-headline-xl text-headline-xl mb-4 leading-none tracking-tighter">Ultimate Control Over Darkness.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-10 max-w-lg">
+                    The Beam-Master 600c redefined the technical standard for color accuracy and shadow management. Engineered for lighting directors who demand precision in every frame.
+                </p>
+<div class="flex gap-4">
+<button class="bg-primary text-on-primary font-label-sm text-label-sm py-4 px-10 rounded-lg light-bloom hover:scale-105 transition-all tracking-widest uppercase font-bold">
+                        Configure Now
+                    </button>
+<button class="bg-background border border-primary text-primary font-label-sm text-label-sm py-4 px-10 rounded-lg hover:bg-primary/5 transition-all tracking-widest uppercase font-bold">
+                        Watch Demo
+                    </button>
+</div>
+</div>
+</section>
+<!-- Technical Specifications Bento Grid -->
+<section class="px-margin py-24 bg-surface">
+<div class="grid grid-cols-12 gap-gutter">
+<div class="col-span-12 md:col-span-8 flex flex-col justify-between p-10 bg-surface-container-low border border-outline-variant/30 rounded-xl beveled-edge relative overflow-hidden group">
+<div class="relative z-10">
+<span class="font-spec-mono text-spec-mono text-primary/60 uppercase block mb-4">Core Technology</span>
+<h3 class="font-headline-lg text-headline-lg mb-6">Hyper-Reflector 2.0</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-md">Our proprietary optical system boosts output by 300% while maintaining a CRI of 98. Experience the purest white light in the industry.</p>
+</div>
+<div class="mt-12 grid grid-cols-3 gap-6 relative z-10">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant/50 uppercase mb-1">Max Output</p>
+<p class="font-headline-md text-headline-md text-primary">60,000 lux</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant/50 uppercase mb-1">Color Temp</p>
+<p class="font-headline-md text-headline-md text-primary">2700-6500K</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant/50 uppercase mb-1">CRI / TLCI</p>
+<p class="font-headline-md text-headline-md text-primary">98+ / 97+</p>
+</div>
+</div>
+<!-- Radial Glow Decor -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary/10 rounded-full blur-[100px] group-hover:bg-primary/20 transition-all duration-700"></div>
+</div>
+<div class="col-span-12 md:col-span-4 p-10 bg-surface-container border border-outline-variant/30 rounded-xl beveled-edge flex flex-col items-center justify-center text-center">
+<div class="mb-6 w-16 h-16 rounded-full border border-primary/40 flex items-center justify-center relative">
+<div class="absolute inset-0 rounded-full knurled-texture"></div>
+<span class="material-symbols-outlined text-primary text-3xl">ac_unit</span>
+</div>
+<h4 class="font-headline-md text-headline-md mb-2">Liquid-Cooling</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Silent active cooling system designed for 24/7 continuous operation on quiet sets.</p>
+</div>
+<div class="col-span-12 md:col-span-4 p-8 bg-surface-container-high border border-outline-variant/30 rounded-xl beveled-edge">
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-primary">settings_input_hdmi</span>
+<h4 class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface">Connectivity</h4>
+</div>
+<ul class="space-y-3 font-spec-mono text-spec-mono text-on-surface-variant">
+<li class="flex justify-between border-b border-outline-variant/20 pb-1"><span>LumenRadio CRMX</span> <span class="text-primary">YES</span></li>
+<li class="flex justify-between border-b border-outline-variant/20 pb-1"><span>DMX512 5-Pin</span> <span class="text-primary">YES</span></li>
+<li class="flex justify-between border-b border-outline-variant/20 pb-1"><span>Sidus Link App</span> <span class="text-primary">YES</span></li>
+</ul>
+</div>
+<!-- Shadow Quality Slider Component -->
+<div class="col-span-12 md:col-span-8 p-10 bg-gradient-to-br from-surface-container-low to-background border border-outline-variant/30 rounded-xl beveled-edge flex flex-col justify-center">
+<div class="flex justify-between items-end mb-10">
+<div>
+<h4 class="font-headline-md text-headline-md mb-2">Shadow-Quality Simulation</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Adjust the diffusion factor to visualize edge hardness.</p>
+</div>
+<div class="text-right">
+<span class="font-spec-mono text-spec-mono text-primary uppercase block">Diffusion Value</span>
+<span class="font-headline-md text-headline-md">74%</span>
+</div>
+</div>
+<div class="relative w-full h-12 flex items-center">
+<div class="absolute inset-0 bg-surface-container-highest rounded-full h-2 my-auto"></div>
+<div class="absolute left-0 bg-primary h-2 my-auto rounded-full shadow-[0_0_15px_rgba(255,186,67,0.5)]" style="width: 74%"></div>
+<!-- Custom Hardware Slider Thumb -->
+<div class="absolute left-[74%] -ml-4 w-8 h-8 rounded-full bg-background border-2 border-primary flex items-center justify-center light-bloom cursor-pointer group">
+<div class="w-1 h-1 bg-primary rounded-full"></div>
+<div class="absolute inset-0 rounded-full knurled-texture"></div>
+</div>
+</div>
+<div class="flex justify-between mt-4 font-label-sm text-label-sm text-on-surface-variant opacity-50 uppercase tracking-tighter">
+<span>Hard Edge (0%)</span>
+<span>Soft Bloom (100%)</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Professional FAQ Accordion Section -->
+<section class="px-margin py-24 bg-surface-container-low">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg mb-4">Professional FAQ</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Technical answers for master technicians.</p>
+</div>
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="bg-surface border border-outline-variant/30 rounded-xl overflow-hidden">
+<button class="w-full px-8 py-6 flex items-center justify-between hover:bg-surface-variant transition-colors group">
+<span class="font-headline-md text-headline-md text-left">How does the 600c handle extreme thermal environments?</span>
+<span class="material-symbols-outlined text-primary group-hover:rotate-180 transition-transform">expand_more</span>
+</button>
+<div class="px-8 pb-8">
+<p class="font-body-md text-body-md text-on-surface-variant">The 600c utilizes our Advanced Copper Heat-Pipe (ACHP) system which can dissipate heat effectively even in ambient temperatures up to 45°C. For industrial environments, the fan speed can be locked to "Max" via the DMX profile.</p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-surface border border-outline-variant/30 rounded-xl overflow-hidden">
+<button class="w-full px-8 py-6 flex items-center justify-between hover:bg-surface-variant transition-colors group">
+<span class="font-headline-md text-headline-md text-left">Can the unit be powered by block batteries on location?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">expand_more</span>
+</button>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-surface border border-outline-variant/30 rounded-xl overflow-hidden">
+<button class="w-full px-8 py-6 flex items-center justify-between hover:bg-surface-variant transition-colors group">
+<span class="font-headline-md text-headline-md text-left">What is the color drift over 5000+ hours of operation?</span>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors">expand_more</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Community Collective - Comment Section -->
+<section class="px-margin py-24 bg-background">
+<div class="max-w-6xl mx-auto">
+<div class="flex items-end justify-between mb-16 border-b border-outline-variant pb-6">
+<div>
+<h2 class="font-headline-lg text-headline-lg">Community Collective</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Technical tips and rigging setups from the field.</p>
+</div>
+<button class="bg-primary/10 border border-primary/20 text-primary px-6 py-2 rounded-lg font-label-sm text-label-sm uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all">
+                        Join Discussion
+                    </button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Comment Card 1 -->
+<div class="p-8 bg-surface-container rounded-xl border border-outline-variant/20 relative group">
+<div class="flex items-center gap-4 mb-6">
+<img alt="Erik J." class="w-12 h-12 rounded-full border border-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzNd_MR8kc2U4DbcCqj3Rbr6Z5oS5aBQMRzYff1FfngX9YHm_fGBpBYhhcZn2p5B772ovGN47y2fIoLRa4R2TNN9e2dWQKSNov4HL1BA1RygzBppJw9we_g9Fyhpn2hiC2E5AwB0cizMc6Er8H56srjxOP5S1Ndt3YoWT8LcOQl-S-30HgeaA_2wdeX8WPZtNu5DmOskZ0ds5n0c2oLsWxYc8o65fR1vp8Q_jjL23ZHrFxDHxM5oQIn8COegF71hhnY5Nl3jMGJhc"/>
+<div>
+<h5 class="font-label-sm text-label-sm text-on-surface">Erik Jansson</h5>
+<p class="font-spec-mono text-[10px] text-primary/60 uppercase">Gaffer • 12 years exp.</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-6">
+                            "For punchy, high-contrast night exteriors, I pair the 600c with the Fresnel attachment. It holds a tighter beam than most 1.2K HMIs I've used."
+                        </p>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">thumb_up</span>
+<span class="font-label-sm text-label-sm">24</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">comment</span>
+<span class="font-label-sm text-label-sm">Reply</span>
+</button>
+</div>
+</div>
+<!-- Comment Card 2 -->
+<div class="p-8 bg-surface-container rounded-xl border border-outline-variant/20 relative group">
+<div class="flex items-center gap-4 mb-6">
+<img alt="Sarah L." class="w-12 h-12 rounded-full border border-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxb6p1cyWsbba1frCm6eVcMH-lZOoj18GLSphEuO9hh8CeVx8iJJT6CAOXqSfgiE0MgFAo7IyrmruCyeyKl7Vi8yrJyETa_m9-5KcENTbEulg3mMkgCagCsNmVdkqvzhs2-3hRJBrLAvLd-DdOgdXBhVRIl8SIm83GQJqPxjylUALyiiLfKsWy-eFMFh_KR_160CfymEnkKpjtR6bHNrcRAY-cYgnk9xgDyLiivmYv9l-7bpUb0-AVceFU3g-MHSGRmHZ5oFowpxE"/>
+<div>
+<h5 class="font-label-sm text-label-sm text-on-surface">Sarah Lawrence</h5>
+<p class="font-spec-mono text-[10px] text-primary/60 uppercase">Lighting Dir. • BBC</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-6">
+                            "The Sidus Link integration on this model is finally low-latency enough for live concert cues. Huge upgrade from the v1 firmware."
+                        </p>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">thumb_up</span>
+<span class="font-label-sm text-label-sm">82</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">comment</span>
+<span class="font-label-sm text-label-sm">Reply</span>
+</button>
+</div>
+</div>
+<!-- Comment Card 3 -->
+<div class="p-8 bg-surface-container rounded-xl border border-outline-variant/20 relative group">
+<div class="flex items-center gap-4 mb-6">
+<img alt="Marcus T." class="w-12 h-12 rounded-full border border-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-8nfz-3MdMM6GaPJUePZEWyAMnp-QxLaFg6V54MbxNM7HB9lnhkK_ZLWbQvHIi-0Sa59OFp2pFAfEi4WrP19BYSSASpz3GxRXwAqKbdImaUtiDAsKNmdGt6CxFRhuK1_Yrv7vDyP6DLw_dmJpYBTOFOdKiR86ReC76w8g7UIBuvbOCg_0uJjIMbUnqJ2UA3UMhxlg72ywPT28Hw2lEYH_udW_V_idb-vdcF9aP6Ges5x_xN63iPnfLNcu1JgoCGA44DnSH4kurS0"/>
+<div>
+<h5 class="font-label-sm text-label-sm text-on-surface">Marcus Thorne</h5>
+<p class="font-spec-mono text-[10px] text-primary/60 uppercase">DP • Freelance</p>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant italic mb-6">
+                            "Tip: Use the 'Flicker-Free' mode when shooting over 120fps. It's hidden in the deep menu but essential for slow-mo sports work."
+                        </p>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">thumb_up</span>
+<span class="font-label-sm text-label-sm">156</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">comment</span>
+<span class="font-label-sm text-label-sm">Reply</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Hardware Accent -->
+<footer class="ml-64 py-12 px-margin bg-surface-container-lowest border-t border-outline-variant/30 flex justify-between items-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-50 uppercase tracking-[0.2em]">© 2024 Studio-Beam Technologies. All Rights Reserved.</p>
+<div class="flex gap-8">
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors" href="#">Privacy</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors" href="#">Compliance</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary uppercase tracking-widest transition-colors" href="#">API Keys</a>
+</div>
+</footer>
+</body></html>

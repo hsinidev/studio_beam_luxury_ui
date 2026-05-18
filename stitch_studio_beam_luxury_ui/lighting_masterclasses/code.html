@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700;800&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#1e2020",
+                        "surface-dim": "#121414",
+                        "error-container": "#93000a",
+                        "tertiary-fixed-dim": "#bec6dd",
+                        "surface-tint": "#ffba43",
+                        "primary-fixed-dim": "#ffba43",
+                        "on-secondary-fixed": "#161c26",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#dbe2fa",
+                        "secondary": "#c1c6d5",
+                        "surface-bright": "#37393a",
+                        "secondary-fixed-dim": "#c1c6d5",
+                        "on-surface-variant": "#d7c4ac",
+                        "surface-container-highest": "#333535",
+                        "on-primary-fixed": "#281800",
+                        "on-tertiary-container": "#464e61",
+                        "surface-container-high": "#282a2b",
+                        "tertiary": "#d3dbf3",
+                        "on-background": "#e2e2e2",
+                        "on-tertiary-fixed": "#131b2c",
+                        "on-secondary-container": "#b0b5c3",
+                        "on-primary-fixed-variant": "#614000",
+                        "on-tertiary": "#283042",
+                        "on-primary": "#432c00",
+                        "surface-container-low": "#1a1c1c",
+                        "on-surface": "#e2e2e2",
+                        "inverse-primary": "#805600",
+                        "primary-container": "#ffb000",
+                        "primary-fixed": "#ffddaf",
+                        "secondary-fixed": "#dde2f1",
+                        "inverse-surface": "#e2e2e2",
+                        "on-error-container": "#ffdad6",
+                        "outline": "#9f8e78",
+                        "outline-variant": "#524533",
+                        "on-secondary": "#2b313c",
+                        "primary": "#ffd597",
+                        "on-secondary-fixed-variant": "#414753",
+                        "on-tertiary-fixed-variant": "#3f475a",
+                        "surface-variant": "#333535",
+                        "inverse-on-surface": "#2f3131",
+                        "tertiary-container": "#b7bfd6",
+                        "background": "#121414",
+                        "error": "#ffb4ab",
+                        "surface": "#121414",
+                        "secondary-container": "#414753",
+                        "on-primary-container": "#6a4700",
+                        "surface-container-lowest": "#0c0f0f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin": "64px",
+                        "container-max": "1440px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Epilogue"],
+                        "headline-lg": ["Epilogue"],
+                        "spec-mono": ["Space Grotesk"],
+                        "body-md": ["Space Grotesk"],
+                        "body-lg": ["Space Grotesk"],
+                        "headline-md": ["Epilogue"],
+                        "label-sm": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "spec-mono": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "500"}],
+                        "label-sm": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .knurled-bg {
+            background-image: radial-gradient(circle, #ffd597 1px, transparent 1px);
+            background-size: 4px 4px;
+            opacity: 0.1;
+        }
+        .bloom-primary:hover {
+            box-shadow: 0 0 40px rgba(255, 186, 67, 0.15);
+        }
+        .beveled-edge {
+            box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface font-body-md selection:bg-primary/30 selection:text-primary">
+<!-- TopAppBar -->
+<header class="bg-surface-dim dark:bg-surface-dim border-b border-outline-variant/30 docked full-width top-0 sticky z-50">
+<div class="flex justify-between items-center px-gutter py-unit w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary dark:text-primary" data-icon="signal_cellular_alt">signal_cellular_alt</span>
+<h1 class="text-headline-md font-headline-md font-bold tracking-tighter text-primary dark:text-primary">Studio-Beam</h1>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="text-spec-mono font-spec-mono">100%</span>
+<span class="material-symbols-outlined text-spec-mono font-spec-mono" data-icon="battery_full">battery_full</span>
+</div>
+</div>
+</header>
+<main class="pb-32">
+<!-- Hero Section -->
+<section class="relative w-full overflow-hidden px-gutter pt-12 pb-8">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col gap-4">
+<span class="text-spec-mono font-spec-mono text-primary uppercase tracking-[0.2em]">Masterclass series</span>
+<h2 class="font-headline-xl text-headline-xl max-w-3xl leading-none">Crafting Atmospheric Light.</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">Deep-dive into professional studio workflows, where every shadow tells a story and every light source is a deliberate brushstroke.</p>
+</div>
+</div>
+</section>
+<!-- Categories & Search -->
+<section class="px-gutter mb-8">
+<div class="max-w-container-max mx-auto flex flex-col gap-6">
+<div class="flex gap-3 overflow-x-auto pb-4 no-scrollbar">
+<button class="flex-none bg-primary text-on-primary font-spec-mono text-spec-mono px-6 py-2 rounded-full bloom-primary">All Classes</button>
+<button class="flex-none bg-surface-container-high border border-outline-variant/20 text-on-surface-variant font-spec-mono text-spec-mono px-6 py-2 rounded-full hover:border-primary/50 transition-colors">Cinematic Portraits</button>
+<button class="flex-none bg-surface-container-high border border-outline-variant/20 text-on-surface-variant font-spec-mono text-spec-mono px-6 py-2 rounded-full hover:border-primary/50 transition-colors">High-Key Lighting</button>
+<button class="flex-none bg-surface-container-high border border-outline-variant/20 text-on-surface-variant font-spec-mono text-spec-mono px-6 py-2 rounded-full hover:border-primary/50 transition-colors">Commercial Workflow</button>
+<button class="flex-none bg-surface-container-high border border-outline-variant/20 text-on-surface-variant font-spec-mono text-spec-mono px-6 py-2 rounded-full hover:border-primary/50 transition-colors">Color Theory</button>
+</div>
+</div>
+</section>
+<!-- Continuing Classes (Horizontal Scroll) -->
+<section class="px-gutter mb-12">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Continuing Classes</h3>
+<button class="text-spec-mono font-spec-mono text-primary hover:underline">See all activity</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Progress Card 1 -->
+<div class="group relative bg-surface-container-low rounded-xl overflow-hidden beveled-edge border border-white/5 p-4 flex gap-4">
+<div class="w-1/3 aspect-video rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A professional cinema camera on a tripod positioned in a dimly lit studio with a soft blue key light hitting its lens. The background features technical lighting gear and soft gradients of midnight blue and amber. The mood is focused and professional, highlighting technical mastery in cinematography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADL5OpvfjHk3FinwJnQitPrXnI9vPPTTKzWi20-7E5OfzGOfwNEoPWVnl-91yZRFPWM3yFIu7VDRseNpCPfblt4NgiLfQ8nXn1mZqezeG1i3P4kA2SWhGNpJxMONcjpI_739VoMhhEWs0Lme8IpZ4LEmQxwOGcT8unHVxxI35BAbJ5IgqaFUbdvE1EhlIP759t4odHkyEEPUQAdiW8Wsznva3EkP39viTGY4ylbeXF3SabpFqed-lHOjXdLimecWQMu1_zsdMwJe0"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/40">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="play_circle">play_circle</span>
+</div>
+</div>
+<div class="w-2/3 flex flex-col justify-between py-1">
+<div>
+<p class="text-spec-mono font-spec-mono text-primary text-[10px] uppercase tracking-wider mb-1">Lesson 04 / 12</p>
+<h4 class="font-headline-md text-body-lg text-on-surface leading-tight">Advanced Volumetric Lighting</h4>
+</div>
+<div class="mt-4">
+<div class="flex justify-between items-center mb-2">
+<span class="text-spec-mono font-spec-mono text-[10px] text-on-surface-variant">65% Complete</span>
+</div>
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary shadow-[0_0_10px_rgba(255,186,67,0.5)] w-[65%]"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Progress Card 2 -->
+<div class="group relative bg-surface-container-low rounded-xl overflow-hidden beveled-edge border border-white/5 p-4 flex gap-4">
+<div class="w-1/3 aspect-video rounded-lg overflow-hidden relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500" data-alt="A high-end photography studio setup for a cinematic portrait. A model is silhouetted against a deep amber glow from a large softbox. The scene is atmospheric with visible lens flares and deep shadows, emphasizing the 'absence of light' aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAyJ0V8nrw1PnqnjrkM1c2jxDHKL6JjfqxsrUc2CF1PlsRwT6RAn3GVxsl1rGiBCofEkC2UctQPNT5HBFEIZL3SC8oUv5l90GDFWgPaJ1a4-14wBHSkNbqH-11n3s92VKKSfQOuVomtft8YNx2kfChXWKJlJFTQOLCW_wD-2WkCjRmSO500PLViDeqI_jtnnXKHU_UyX8PzaxQOuLJZ1qwiR5TJCfwNtNEU_sRTPo4qC87Oa-dQZ6EiITH2wKkx6MyvFOHnImfQgmo"/>
+<div class="absolute inset-0 flex items-center justify-center bg-black/40">
+<span class="material-symbols-outlined text-white text-4xl" data-icon="play_circle">play_circle</span>
+</div>
+</div>
+<div class="w-2/3 flex flex-col justify-between py-1">
+<div>
+<p class="text-spec-mono font-spec-mono text-primary text-[10px] uppercase tracking-wider mb-1">Lesson 02 / 08</p>
+<h4 class="font-headline-md text-body-lg text-on-surface leading-tight">Mood &amp; Texture in Portraits</h4>
+</div>
+<div class="mt-4">
+<div class="flex justify-between items-center mb-2">
+<span class="text-spec-mono font-spec-mono text-[10px] text-on-surface-variant">22% Complete</span>
+</div>
+<div class="h-1 w-full bg-surface-container-highest rounded-full overflow-hidden">
+<div class="h-full bg-primary shadow-[0_0_10px_rgba(255,186,67,0.5)] w-[22%]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Library Bento Grid -->
+<section class="px-gutter mb-12">
+<div class="max-w-container-max mx-auto">
+<h3 class="font-headline-md text-headline-md text-on-surface mb-8">Featured Masterclasses</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Class Card 1 - Large -->
+<div class="md:col-span-2 group relative rounded-xl overflow-hidden bg-surface-container-low border border-white/5 beveled-edge hover:border-primary/20 transition-all">
+<div class="aspect-video relative">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="A macro shot of professional studio lights, specifically a Fresnel lens with a warm amber glow emanating from its center. The lighting is precise, reflecting off polished metal surfaces with a midnight blue finish. The composition is artistic and minimalist, emphasizing high-end engineering and technical perfection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCv9peA_o3r55W0GqS_dkL82uKTE1NsVMCDIUbNpOrxrfjzHGUz9N1_zZiF62QdCU54sq1Y_pbZ3LIwfF1QOGBv6Rg8-Bcov9myonceYDJwtrojWib2eh1JiMSABMDyx3xHCkm3mFd7RFmD3Q2g9R1sj3eI5OjOn4gCjJXrUgnNv66OLVfacZFa3ztbVCC1vlbJYiz75h3CTAB9lCDG4yI4Lh-UI5shXPyPWv6enx6GNxC1c9T5I9jO04RDtHNTS4Qe07dKk2J1ve8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"></div>
+<div class="absolute bottom-6 left-6 right-6">
+<span class="bg-primary/20 text-primary text-spec-mono font-spec-mono px-3 py-1 rounded text-[10px] uppercase tracking-widest mb-3 inline-block backdrop-blur-sm">Cinematic Essentials</span>
+<h4 class="font-headline-lg text-headline-lg leading-tight mb-2">The Architecture of Shadows</h4>
+<div class="flex items-center gap-4 text-on-surface-variant text-spec-mono font-spec-mono text-sm">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="timer">timer</span> 4h 32m</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm" data-icon="groups">groups</span> 12.4k Students</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Class Card 2 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low border border-white/5 beveled-edge">
+<div class="aspect-square relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A technical closeup of a studio light modifier, a beauty dish with a grid, reflecting a single pinpoint of warm amber light. The surroundings are dark midnight blue, creating an editorial feel. The lighting highlights the geometric patterns and high-quality materials of the equipment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI3lo0_h1kAb3FDxVtOdHy4ow3eC2D5RROZtRDHgCJYSILfBhQ4sejV_EwWZBfwDxnkjuRgRLiRsG9YIsQEZjm4SAdWz8c1QLKW4sBQ58tMgz9PzGCrARbOR6BGUIJzKhveJFfNQTe-CcUDPDRBy0NZD7MrnHipdTungNP_L3gfMo-6dOWCcGi_Lhnj9Ohs9ts_aMUVtWHtpE6OHGjuEhFvOENnLMWwKjGh56O_doCJ9vfMPn_8HWYomeo1UIb4ggLwRlXOr4fBh4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="absolute bottom-6 left-6">
+<span class="text-primary text-spec-mono font-spec-mono text-[10px] uppercase mb-1 block">Hardware Mastery</span>
+<h4 class="font-headline-md text-headline-md mb-2">Studio-Beam: Pro Workflows</h4>
+<button class="text-on-surface-variant group-hover:text-primary flex items-center gap-2 transition-colors">
+<span class="text-spec-mono font-spec-mono">Start Class</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Class Card 3 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low border border-white/5 beveled-edge">
+<div class="aspect-square relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A dark studio workspace featuring high-end monitors displaying vibrant color grading wheels. The room is bathed in a soft blue ambient light with subtle amber light leaking from a side source. The atmosphere is quiet, focused, and technologically advanced, suitable for an educational color grading course." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiuT18PAzS-EabMY4Laj49Vbz1x96YJKlcZC0tJcED2SflgI9GEBa83c3v6lGCYFRPaMYSoZ0aqrTzqmC--MJq-fKjp75VFagpzEmXMJdfbCJ633xprv_GAzTm492MFPJU9S1NPrdLHchqJVVNesrJxIbfMxYt3wixLCNamloaf2bvv9-cAEx02c7_8L-CUjQEG6OqLasmt7RN__XC56WIgUaP99buItZFS0JO14ds8oPmEk-PuV1j8NZ_6Qo3ZUEns27eSSxBjYg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="absolute bottom-6 left-6">
+<span class="text-primary text-spec-mono font-spec-mono text-[10px] uppercase mb-1 block">Post-Production</span>
+<h4 class="font-headline-md text-headline-md mb-2">Technical Color Correction</h4>
+<button class="text-on-surface-variant group-hover:text-primary flex items-center gap-2 transition-colors">
+<span class="text-spec-mono font-spec-mono">Start Class</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Class Card 4 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low border border-white/5 beveled-edge">
+<div class="aspect-square relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A sleek, modern desk setup in a darkened room. A single warm designer lamp illuminates a tablet showing intricate technical sketches of lighting diagrams. The aesthetic is clean and minimal, using a midnight blue and amber palette to convey a sense of premium education and design excellence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbhVLVNrmhwHKlLcMSgK-ViixIz36ffO9mL4gAmBnQYhaUyeCDSAzHd0zF5K0OnKAk5U3XFS_pxFgSBVHRqG0tAErWHNTUCodSn_vMqSPzfEiwu1qTBXGOvBdmDzr_A4LWflndn8k5Y7Ig7ExH0000BxJ0e0mOz3hiy0hcktgckvDlStALKBVC0I8w7t88WUv1vMkPFVq_M3Cl9z8xrwEjOhnpH8AU_eVLE5B2iR58p-EgMDcahjmPFGWnhpBmbOEiulidutJfDb0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="absolute bottom-6 left-6">
+<span class="text-primary text-spec-mono font-spec-mono text-[10px] uppercase mb-1 block">Theory</span>
+<h4 class="font-headline-md text-headline-md mb-2">Designing Light Hierarchies</h4>
+<button class="text-on-surface-variant group-hover:text-primary flex items-center gap-2 transition-colors">
+<span class="text-spec-mono font-spec-mono">Start Class</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Class Card 5 -->
+<div class="group relative rounded-xl overflow-hidden bg-surface-container-low border border-white/5 beveled-edge">
+<div class="aspect-square relative">
+<img class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700" data-alt="A collection of professional camera lenses lined up on a dark reflective surface. Each lens has a hint of warm light on its edge. The scene is shot with a very shallow depth of field, creating a beautiful bokeh of blue and amber lights in the background, signifying the high quality of optical engineering." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQlREm_OrNpNmS7FveJGMiZWzOyLniL4Dz1DmZrtQB3YVoiktuIbtlfVhJL5zKZFZe7EPkafeFGFe4HyRJZJm_59Ds_TiPCeIC0Vf4EhmHijy-PAYthlQTfu-Bz3uqsWpIxh5gjDf5qqGa3YVKxmiCgU8ZpLVNTZmAhJWcCGBpbombwBOY68lgSyfni0s_Y9ICeeBkUTspHQDNEm5ZZeWPLuHxd_9aydtk6slreL-0yn7Jb1faN15hcwqOFvjQ24KQltEDKokrLgw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-80"></div>
+<div class="absolute bottom-6 left-6">
+<span class="text-primary text-spec-mono font-spec-mono text-[10px] uppercase mb-1 block">Optics</span>
+<h4 class="font-headline-md text-headline-md mb-2">The Science of Glass</h4>
+<button class="text-on-surface-variant group-hover:text-primary flex items-center gap-2 transition-colors">
+<span class="text-spec-mono font-spec-mono">Start Class</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Newsletter / Community Hardware Hook -->
+<section class="px-gutter mb-20">
+<div class="max-w-container-max mx-auto bg-surface-container-high rounded-3xl p-12 relative overflow-hidden flex flex-col md:flex-row items-center gap-12 border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/10 blur-[100px] rounded-full"></div>
+<div class="relative z-10 flex-1">
+<h3 class="font-headline-lg text-headline-lg mb-4">Master your Studio-Beam.</h3>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Get exclusive lighting diagrams and technical guides delivered to your inbox every week. Designed for the professionals who never stop learning.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<input class="flex-1 bg-surface-dim border border-outline-variant/30 text-on-surface px-6 py-3 rounded-full focus:ring-1 focus:ring-primary focus:border-primary outline-none transition-all" placeholder="professional@studio.com" type="email"/>
+<button class="bg-primary text-on-primary font-headline-md text-body-md font-bold px-8 py-3 rounded-full bloom-primary transition-all">Join the Collective</button>
+</div>
+</div>
+<div class="relative z-10 flex-shrink-0 w-full md:w-1/3 flex justify-center">
+<div class="relative w-48 h-48 rounded-full border-2 border-primary/20 p-2">
+<div class="w-full h-full rounded-full border-8 border-surface-container flex items-center justify-center bg-surface-dim shadow-inner relative">
+<div class="knurled-bg absolute inset-0 rounded-full"></div>
+<div class="w-2 h-2 bg-primary rounded-full absolute top-8 shadow-[0_0_10px_#ffba43]"></div>
+<span class="material-symbols-outlined text-primary text-5xl" data-icon="fluorescent">fluorescent</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 backdrop-blur-xl bg-surface-container-low dark:bg-surface-container-low border-t border-white/5 shadow-[0_-10px_40px_rgba(255,186,67,0.1)] rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-4 py-1 hover:text-primary/80 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="fluorescent">fluorescent</span>
+<span class="text-label-sm font-label-sm">Studio</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-4 py-1 hover:text-primary/80 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings_remote">settings_remote</span>
+<span class="text-label-sm font-label-sm">Devices</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary font-bold shadow-[0_0_15px_rgba(255,186,67,0.3)] bg-surface-bright/20 rounded-xl px-4 py-1 active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="layers" style="font-variation-settings: 'FILL' 1;">layers</span>
+<span class="text-label-sm font-label-sm">Presets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 px-4 py-1 hover:text-primary/80 transition-all" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="settings">settings</span>
+<span class="text-label-sm font-label-sm">Settings</span>
+</a>
+</nav>
+</body></html>
